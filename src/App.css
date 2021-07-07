@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200;600;700&display=swap');
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  font-size: 4rem;
+  color: #a87974;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2, h3 {
+  font-family: 'Raleway', sans-serif;
+  color: #d2bab8;
+  font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h4 {
+  margin: 40px 0 5px;
+  font-family: 'Raleway', sans-serif;
+  color: #d2bab8;
+  font-size: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: #283d3b;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  color: #d2bab8;
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5; 
 }
 
-.App-link {
-  color: #61dafb;
+.hour-container {
+  background: #324c4a;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  padding: 1rem;
+  border-bottom: #a87974 5px solid;
+  box-shadow: 10px 0 10px #283d3b
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hour-container:hover {
+  opacity: 0.6;
+  border-color: #925851;
+  transition: all 0.8s ease-out;
 }
+
+.delete-btn {
+  background: #283d3b;
+  color: red;
+  border: 0;
+  position: absolute;
+  font-size: 20px;
+  line-height: 20px;
+  transition: opacity 0.4s ease;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.btn {
+  background: #a87974;
+  color: #d2bab8;
+  display: block;
+  border: 0;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px 0 40px;
+  width: 50%;
+}
+
+.btn:hover {
+  opacity: 0.6;
+  border-color: #925851;
+  transition: all 0.8s ease-out;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #a87974;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1171px) {
+ 
+}
+
+@media screen and (max-width: 768px) {
+  
+}
+
+@media screen and (max-width: 500px) {
+ }
