@@ -9,7 +9,7 @@ export const AddHours = () => {
             <h4>Add hours you have used</h4>
             <form>
                 <div className="form-control">
-                    <label htmlFor="text">What you did you do?</label>
+                    <label htmlFor="text">What did you do?</label>
                     <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
                 </div>
                 <div className="form-control">

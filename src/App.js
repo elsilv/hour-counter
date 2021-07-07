@@ -5,11 +5,13 @@ import { HoursUsedLeft } from './components/HoursUsedLeft';
 import { History } from './components/History';
 import { AddHours } from './components/AddHours';
 
+import { GlobalProvider } from './context/GlobalState';
+
 import './App.css';
 
 function App() {
     return (
-        <div>
+        <GlobalProvider>
             <Header />
             <div className="container">
                 <TimeSpend />
@@ -17,7 +19,7 @@ function App() {
                 <History />
                 <AddHours />
             </div>
-        </div>
+        </GlobalProvider>
     )
 }
 

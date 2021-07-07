@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { UsedHours } from './UsedHours';
+import { GlobalContext } from '../context/GlobalState';
 
 export const History = () => {
+    const { usedHours } = useContext(GlobalContext);
+
     return (
         <>
             <h3>History</h3>
             <ul className="list">
-                <li className="minus">
-                    Used <span>2 hour</span> <button className="delete-btn">x</button>
-                </li>
+                {usedHours.map(usedHours => ( <UsedHours key={usedHours.id} usedHours={usedHours}/> ))}   
             </ul>
         </>
     )
