@@ -34,6 +34,11 @@ body {
   line-height: 1.5; 
 }
 
+.container {
+  margin: 30px auto;
+  width: 400px;
+}
+
 .hour-container {
   background: #324c4a;
   display: flex;
@@ -103,11 +108,11 @@ input[type='number'] {
 }
 
 .list li {
- display: flex;
- justify-content: space-between;
- position: relative;
- padding: 5px;
- margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 5px;
+  margin: 10px;
 }
 
 #main-footer {
@@ -119,13 +124,17 @@ input[type='number'] {
   width: 100%;
 }
 
-@media screen and (min-width: 1171px) {
- 
-}
+@media (max-width: 500px) {
 
-@media screen and (max-width: 768px) {
-  
-}
+  h1 {
+    padding: 1rem;
+    margin-top: 10vh;
+    text-align: center;
+  }
 
-@media screen and (max-width: 500px) {
+  .container {
+    width: 300px;
+    align-items: center;
+    text-align: center;
+  }
  }
