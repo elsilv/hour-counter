@@ -9,8 +9,7 @@ export const TimeSpend = () => {
 
     return (
         <>
-            <h3>Time you have used:</h3>
-            <h2>{totalAmounts}</h2>
+            <h3>Time you have used: {totalAmounts} hours</h3>
         </>
     )
 }

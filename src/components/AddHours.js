@@ -17,6 +17,9 @@ export const AddHours = () => {
         }
 
         addHours(newHistory);
+        
+        setText('');
+        setAmount(0);
     }
 
     return (
@@ -33,6 +36,10 @@ export const AddHours = () => {
                 </div>
                 <button className="btn">Add hours</button>
             </form>
+
+            <footer id="main-footer">
+                 Copyright &copy; 2021
+            </footer>
         </>
     )
 }
