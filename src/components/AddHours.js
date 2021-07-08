@@ -16,7 +16,9 @@ export const AddHours = () => {
             amount: +amount
         }
 
-        addHours(newHistory);
+        if (text.length > 1 & amount !== 0) { 
+            addHours(newHistory); 
+        }
         
         setText('');
         setAmount(0);
