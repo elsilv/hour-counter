@@ -125,7 +125,6 @@ input[type='number'] {
 }
 
 @media (max-width: 500px) {
-
   h1 {
     padding: 1rem;
     margin-top: 10vh;
@@ -137,4 +136,4 @@ input[type='number'] {
     align-items: center;
     text-align: center;
   }
- }
+}
