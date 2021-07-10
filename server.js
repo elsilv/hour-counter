@@ -2,12 +2,17 @@ const express = require('express');
 const dotenv = require('dotenv');
 const colors = require('colors');
 const morgan = require('morgan');
+const connectMongoDB = require('./config/db');
 
 dotenv.config( { path: '/.config/config.env'} )
 
+connectMongoDB();
+
+const workingHours = require('./routes/workingHours')
+
 const app = express();
 
-app.get('/', (req, res) => res.send('Hello'));
+app.use('/api/workingHours', workingHours);
 
 const PORT =  process.env.PORT || 5000;
 
