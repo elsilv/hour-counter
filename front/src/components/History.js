@@ -1,9 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { UsedHours } from './UsedHours';
 import { GlobalContext } from '../context/GlobalState';
 
 export const History = () => {
-    const { usedHours } = useContext(GlobalContext);
+    const { usedHours, getWorkingHours } = useContext(GlobalContext);
+
+    useEffect(() => {
+        getWorkingHours();
+        // eslint-disable-next-line
+    }, []);
 
     return (
         <>

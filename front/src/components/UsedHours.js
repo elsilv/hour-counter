@@ -9,7 +9,7 @@ export const UsedHours = (props) => {
     return (
         <li className="minus">
                     {props.usedHours.text} <span>{amount}</span> 
-                    <button onClick={() => deleteHistory(props.usedHours.id)}
+                    <button onClick={() => deleteHistory(props.usedHours._id)}
                     className="delete-btn">x</button>
         </li>
     )

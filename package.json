@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server",
+    "front": "npm start --prefix front",
+    "dev": "concurrently \"npm run server\" \"npm run front\"" 
   },
   "repository": {
     "type": "git",

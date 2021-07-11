@@ -7,8 +7,8 @@ POST http://localhost:5000/api/workingHours HTTP/1.1
 content-type: application/json
 
 {
-    "text": "Luin kurssikirjan kappaleen 1",
-    "amount": "3"
+    "text": "Luin kurssikirjan kappaleen 2",
+    "amount": "4"
 }
 
 ###
