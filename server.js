@@ -12,6 +12,8 @@ const workingHours = require('./routes/workingHours')
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/api/workingHours', workingHours);
 
 const PORT =  process.env.PORT || 5000;

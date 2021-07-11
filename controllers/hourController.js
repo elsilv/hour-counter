@@ -20,10 +20,23 @@ exports.getWorkingHours = async (req, res, next) => {
 
 // POST /api/workingHours
 exports.addWorkingHours = async (req, res, next) => {
-    res.send('POST workingHours');
+    try {
+        const { text, amount } = req.body;
+        
+        const workingHour = await WorkingHour.create(req.body);
+        return res.status(201).json({
+            success: true,
+            data: workingHour
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: 'Server error'
+        });
+    }
 }
 
 // @route DELETE /api/workingHours/:id
 exports.deleteWorkingHours = async (req, res, next) => {
-    res.send('DELETE workingHours');
+    res.status('DELETE workingHours');
 }
