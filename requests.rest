@@ -12,5 +12,5 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:5000/api/workingHours/111
+DELETE http://localhost:5000/api/workingHours/60eaee0b4d19a73424f27d36
 
