@@ -11,28 +11,11 @@ const connectMongoDB = async () => {
             useCreateIndex: true 
         })
 
-            console.log('connected to MongoDB')
+          console.log(`connected to MongoDB`)
         } catch(error) {
           console.log('error connecting to MongoDB ', error.message)
           process.exit(1);
         }
-    }
-
-const workingHoursSchema = new mongoose.Schema({
-    text: {
-        type: String,
-        trim: true,
-        required: true
-    },
-    amount: {
-        type: Number,
-        required: true
-    },
-    created : {
-        type: Date,
-        default: Date.now
-    }
-});
+}
 
 module.exports = connectMongoDB;
-module.exports = mongoose.model('WorkingHour', workingHoursSchema);

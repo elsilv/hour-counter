@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getWorkingHours, addWorkingHours, deleteWorkingHours } = require('../controllers/hourController')
+const { getWorkingHours, addWorkingHours, deleteWorkingHours } = require('../controllers/hourController');
 
 router.route('/')
     .get(getWorkingHours)
