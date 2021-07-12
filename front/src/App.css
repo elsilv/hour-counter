@@ -64,10 +64,10 @@ body {
 
 .delete-btn {
   background: #283d3b;
-  color: red;
+  color: #a87974;
   border: 0;
   position: absolute;
-  transform: translate(-100%, -35%);
+  transform: translate(-95%, -30%);
   padding: 20px 5px;
   font-size: 20px;
   line-height: 20px;
