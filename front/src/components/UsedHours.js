@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
-import * as TiIcons from 'react-icons/ti';
+import * as AiIcons from 'react-icons/ai';
 
 export const UsedHours = (props) => {
     const { deleteHistory } = useContext(GlobalContext);
@@ -11,7 +11,7 @@ export const UsedHours = (props) => {
         <li className="minus">
                     {props.usedHours.text} <span>{amount}</span> 
                     <button onClick={() => deleteHistory(props.usedHours._id)}
-                    className="delete-btn">  <TiIcons.TiDelete/> </button>
+                    className="delete-btn">  <AiIcons.AiOutlineCloseCircle/> </button>
         </li>
     )
 }
