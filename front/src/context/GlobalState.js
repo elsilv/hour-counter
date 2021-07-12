@@ -62,8 +62,6 @@ export const GlobalProvider = ( {children} ) => {
                 payload: error.response.data.error
             })
         }
-
-       
     }
 
     return (<GlobalContext.Provider value={ { usedHours: state.usedHours, 
