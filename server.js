@@ -9,12 +9,14 @@ dotenv.config( { path: '/.config/config.env'} )
 connectMongoDB();
 
 const workingHours = require('./routes/workingHours')
+const user = require('./routes/user')
 
 const app = express();
 
 app.use(express.json());
 
 app.use('/api/workingHours', workingHours);
+app.use('/api/user', user);
 
 const PORT =  process.env.PORT || 5000;
 

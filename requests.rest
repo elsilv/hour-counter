@@ -14,3 +14,15 @@ content-type: application/json
 ###
 DELETE http://localhost:5000/api/workingHours/60eaee0b4d19a73424f27d36
 
+###
+GET http://localhost:5000/api/user
+###
+POST http://localhost:5000/api/user HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Kayttaja1",
+    "name": "Kayttajannimi",
+    "passwordHash": "salasana"
+}
+
