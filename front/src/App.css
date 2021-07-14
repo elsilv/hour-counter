@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200;600;700&display=swap');
 
 h1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   font-size: 4rem;
   color: #a87974;
@@ -175,6 +175,7 @@ input[type='number'] {
 
 .nav-text a:hover {
   background-color: #a87974;
+  opacity: 1;
 }
 
 .nav-menu-items {
