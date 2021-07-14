@@ -100,7 +100,7 @@ label {
 
 .btn:hover {
   opacity: 0.6;
-  border-color: #925851;
+  border-color: #772e25;
   transition: all 0.8s ease-out;
 }
 
@@ -154,6 +154,11 @@ p {
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
+}
+
+.menu-bars:hover {
+  opacity: 0.7;
+  transition: all 0.8s ease-out;
 }
 
 .nav-menu {
@@ -221,7 +226,7 @@ span {
   padding: 0.5rem 0 0 0.5rem;
   background: #141e1d;
   color: #283d3b;
-  height: 30px; 
+  height: 60px; 
   width: 100%;
 }
 
