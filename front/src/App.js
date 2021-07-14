@@ -6,6 +6,8 @@ import { HoursUsedLeft } from './components/HoursUsedLeft';
 import { History } from './components/History';
 import { AddHours } from './components/AddHours';
 import { Navbar } from './components/Navbar';
+import { Login } from './components/Login';
+import { Projects } from './components/Projects';
 
 import { GlobalProvider } from './context/GlobalState';
 
@@ -17,17 +19,25 @@ function App() {
             <Router>
                 <Navbar />
                 <Switch>
-                    <Route path='/'/>
+                    <Route path='/login'>
+                        <Login />
+                    </Route>
+                    <Route path='/projects'>
+                        <Projects />
+                    </Route>
+                    <Route path="/">
+                        <Header />
+                        <div className="container">
+                            <TimeSpend />
+                            <HoursUsedLeft />
+                            <History />
+                            <AddHours />
+                        </div>
+                    </Route>
                 </Switch>
             </Router>
 
-            <Header />
-            <div className="container">
-                <TimeSpend />
-                <HoursUsedLeft />
-                <History />
-                <AddHours />
-            </div>
+           
         </GlobalProvider>
     )
 }
