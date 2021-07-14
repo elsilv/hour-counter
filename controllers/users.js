@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const User = require('../models/User');
 
 // GET /api/user
@@ -22,6 +23,9 @@ exports.addUser = async (req, res, next) => {
     try {
         const { username, name, passwordHash } = req.body;
 
+        const saltRounds = 10;
+        req.body.passwordHash = await bcrypt.hash(req.body.passwordHash, saltRounds);
+   
         const user = await User.create(req.body);
         return res.status(201).json({
             success: true,
