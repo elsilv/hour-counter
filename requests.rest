@@ -21,11 +21,20 @@ POST http://localhost:5000/api/user HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Kayttaja5",
-    "name": "Kayttajannimi5",
+    "username": "Kayttaja10",
+    "name": "Kayttajannimi10",
     "passwordHash": "salasana6"
 }
 
 ###
 DELETE http://localhost:5000/api/user/60eeaaf31c382d02247f6cd8
 
+###
+
+POST http://localhost:5000/api/auth HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Kayttaja10",
+    "passwordHash": "salasana6"
+}
