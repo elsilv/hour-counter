@@ -4,6 +4,7 @@ const config = require('config');
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth');
 
 // POST /api/auth
 exports.addAuth = async (req, res, next) => {
@@ -42,3 +43,22 @@ exports.addAuth = async (req, res, next) => {
     }
 }
 
+// GET /api/auth/user
+exports.getUsers = async (req, res, next) => {
+    try {
+        const user = awaitUser.findById(req.user.id);
+        user.select('-passwordHash');
+    
+        return res.status(200).json({
+            success: true,
+            data: user
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: 'error'
+        });
+    }
+
+  
+}
