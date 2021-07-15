@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const config = require('config');
 
-const url = 'mongodb+srv://dbUser:kissa123@hourcounter.o15id.mongodb.net/timecounter?retryWrites=true&w=majority';
+const url = config.get('mongoURI');
 
 const connectMongoDB = async () => {
     try {

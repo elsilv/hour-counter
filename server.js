@@ -10,6 +10,7 @@ connectMongoDB();
 
 const workingHours = require('./routes/workingHours')
 const user = require('./routes/user')
+const auth = require('./routes/auth')
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use('/api/workingHours', workingHours);
 app.use('/api/user', user);
+app.use('/api/auth', auth);
 
 const PORT =  process.env.PORT || 5000;
 

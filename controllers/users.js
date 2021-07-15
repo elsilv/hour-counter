@@ -1,5 +1,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const config = require('config');
+const jwt = require('jsonwebtoken');
 
 // GET /api/user
 exports.getUsers = async (req, res, next) => {
@@ -27,10 +29,22 @@ exports.addUser = async (req, res, next) => {
         req.body.passwordHash = await bcrypt.hash(req.body.passwordHash, saltRounds);
    
         const user = await User.create(req.body);
-        return res.status(201).json({
-            success: true,
-            data: user
-        });
+
+        jwt.sign(
+            { id: user.id },
+            config.get('jwtSecret'),
+            { expiresIn: 3600 },
+            (err, token) => {
+                if(err) throw err;
+                return res.status(201).json({
+                    token: token,
+                    success: true,
+                    data: user
+                });
+            }
+        )
+
+        
     } catch (error) {
         return res.status(500).json({
             success: false,

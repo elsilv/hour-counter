@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://dbUser:kissa123@hourcounter.o15id.mongodb.net/timecounter?retryWrites=true&w=majority",
+    "jwtSecret": "sitakissaostaisi"
+}
