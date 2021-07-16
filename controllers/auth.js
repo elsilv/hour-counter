@@ -6,6 +6,9 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
 
+const app = express();
+app.use(auth); 
+
 // POST /api/auth
 exports.addAuth = async (req, res, next) => {
     try {
@@ -44,10 +47,10 @@ exports.addAuth = async (req, res, next) => {
 }
 
 // GET /api/auth/user
-exports.getUsers = async (req, res, next) => {
+exports.getAuth = async (req, res, next) => {
     try {
-        const user = awaitUser.findById(req.user.id);
-        user.select('-passwordHash');
+        const user = await User.findById(req.user.id).select('-passwordHash');
+        if(!user) return res.status(400).json({ error: 'User not found' })
     
         return res.status(200).json({
             success: true,

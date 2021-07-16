@@ -38,3 +38,7 @@ content-type: application/json
     "username": "Kayttaja10",
     "passwordHash": "salasana6"
 }
+
+###
+GET http://localhost:5000/api/auth/user
+x-auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWZmODYxMDA3N2E4MTYzODliOTE4NiIsImlhdCI6MTYyNjM1NjcxMSwiZXhwIjoxNjI2MzYwMzExfQ.TC6s9GEyw6e296Olo_w_-WPDpqHXQzosjUerEGBG2Ho"

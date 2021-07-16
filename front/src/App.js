@@ -9,11 +9,16 @@ import { Navbar } from './components/Navbar';
 import { Login } from './components/Login';
 import { Projects } from './components/Projects';
 
+import { loadUser } from './context/AuthState';
+
 import { GlobalProvider } from './context/GlobalState';
 
 import './App.css';
 
 function App() {
+
+    loadUser();
+
     return (
         <GlobalProvider>
             <Router>
