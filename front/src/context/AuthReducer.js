@@ -5,6 +5,7 @@ const initialState = {
     user: null
 };
 
+// eslint-disable-next-line
 export default function (state = initialState, action) {
     switch(action.type) {
         case 'USER_LOADING':
@@ -23,6 +24,7 @@ export default function (state = initialState, action) {
         case 'LOGIN_SUCCESS':
         case 'LOGIN_FAIL':
         case 'REGISTER_SUCCESS':
+            localStorage.setItem('token, action.payload.token');
             return {
                 ...state,
                 ...action.payload,

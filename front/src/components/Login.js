@@ -2,25 +2,24 @@ import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
 export const Login = () => {
-    const [text, setText] = useState('');
-    const [amount, setAmount] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    const { addHours } = useContext(GlobalContext);
+    const { addUser } = useContext(GlobalContext);
     const onSubmit = e => {
         e.preventDefault();
 
-        const newHistory = {
-            id: Math.floor(Math.random() * 100000),
-            text: text,
-            amount: +amount
+        const newUser = {
+            username: username,
+            password: password
         }
 
-        if (text.length > 1 & amount !== 0) { 
-            addHours(newHistory); 
+        if (username.length) { 
+            addUser(newUser); 
         }
         
-        setText('');
-        setAmount(0);
+        setUsername('');
+        setPassword(0);
     }
 
     return (
@@ -29,10 +28,10 @@ export const Login = () => {
             <p>or create an account</p>
             <form onSubmit={onSubmit}>
                 <div className="login-form-control">
-                    <input type="username" value={text} onChange={(e) => setText(e.target.value)} placeholder="Username" />
+                    <input type="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
                 </div>
                 <div className="login-form-control">
-                    <input type="password" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Password" />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </div>
                 <button className="btn">Sign in</button>
             </form>

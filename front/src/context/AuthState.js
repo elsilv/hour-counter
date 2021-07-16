@@ -1,6 +1,9 @@
+// eslint-disable-next-line
 import React, { createContext, useReducer } from 'react';
+// eslint-disable-next-line
 import AuthReducer from './AuthReducer';
 import USER_LOADED from './AuthReducer';
+// eslint-disable-next-line
 import USER_LOADING from './AuthReducer';
 import AUTH_ERROR from './AuthReducer';
 import axios from 'axios';
