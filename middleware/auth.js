@@ -1,20 +1,31 @@
-/* const config = require('config');
+const config = require('config');
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const ErrorResponse = require('../utils/errorResponse');
 
-function auth(req, res, next) {
-    const token = req.header('x-auth-token');
-    if(!token) return res.status(401).json({ error: 'Authorization denied' });
+exports.protect = async (req, res, next) => {
+    let token;
+
+    if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
+        token = req.headers.authorization.split(" ")[1]
+    }
+
+    if (!token) {
+        return next(new ErrorResponse("Authorization denied", 401))
+    }
 
     try {
-        const decoded = jwt.verify(token, config.get('jwtSecret'));
-        req.user = decoded;
-        next();
-    } catch (error) {
-        return res.status(400).json({
-            success: false,
-            error: 'error'
-        });
-    } 
-}
+        const decoded = jwt.verify(token, config.get('jwtSecret'))
+        const user = await User.findById(decoded.id)
 
-module.exports = auth; */
+        if (!user) return next(new ErrorResponse("No user found", 404))
+
+        req.user = user
+
+        next();
+
+    } catch (error) {
+        return next(new ErrorResponse("Not authorized", 401))
+    }
+}
+       
