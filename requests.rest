@@ -42,3 +42,24 @@ content-type: application/json
 ###
 GET http://localhost:5000/api/auth/user
 x-auth-token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZWZmODYxMDA3N2E4MTYzODliOTE4NiIsImlhdCI6MTYyNjM1NjcxMSwiZXhwIjoxNjI2MzYwMzExfQ.TC6s9GEyw6e296Olo_w_-WPDpqHXQzosjUerEGBG2Ho"
+
+###
+
+POST http://localhost:5000/api/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Nimi2",
+    "email": "sposti",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "sposti",
+    "password": "123456"
+}

@@ -1,15 +1,13 @@
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
-const config = require('config');
-const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
-const { addAuth, getAuth } = require('../controllers/auth');
+const { register, login, forgotpassword, resetpassword } = require('../controllers/auth');
 
-router.route('/')
-    .post(addAuth);
+router.route('/register').post(register);
 
-router.route('/user')
-    .get(getAuth);    
+router.route('/login').post(login);
+
+router.route('/forgotpassword').post(forgotpassword);
+
+router.route('/resetpassword/:resetToken').put(resetpassword);
 
 module.exports = router;

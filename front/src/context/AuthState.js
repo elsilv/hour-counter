@@ -1,3 +1,5 @@
+/*
+
 // eslint-disable-next-line
 import React, { createContext, useReducer } from 'react';
 // eslint-disable-next-line
@@ -37,3 +39,5 @@ export const tokenConfig = getState => {
 
     return config;
 }
+
+*/

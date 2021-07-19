@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator')
+const bcrypt = require('bcrypt')
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -8,25 +9,40 @@ const userSchema = new mongoose.Schema({
         unique: true,
         minlength: 4
     },
-    name: {
+    email: {
         type: String,
         required: true,
+        unique: true
     },
-    passwordHash: {
+    name: {
+        type: String
+    },
+    password: {
         type: String,
-        required: true
-    }
+        required: true,
+        minlength: 4,
+        select: false
+    },
+    resetPasswordToken: String,
+    resetPasswordExpire: Date
 }); 
+
+userSchema.pre("save", async function(next) {
+    if(!this.isModified("password")) {
+        next();
+    }
+
+    const saltRounds = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, saltRounds);
+    next();
+});
+
+userSchema.methods.matchPasswords = async function(password) {
+    return await bcrypt.compare(password, this.password);
+}
 
 userSchema.plugin(uniqueValidator);
 
-userSchema.set('toJSON', {
-    transform: (document, returnedObject) => {
-      returnedObject.id = returnedObject._id.toString()
-      delete returnedObject._id
-      delete returnedObject.__v
-      delete returnedObject.passwordHash
-    }
-  });
+const User = mongoose.model('User', userSchema);
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = User;
