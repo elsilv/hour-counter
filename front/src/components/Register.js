@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export const Login = ({ history }) => {
+export const Register = ({ history }) => {
+
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -13,7 +15,7 @@ export const Login = ({ history }) => {
         }
     }, [history])
 
-    const loginHandler = async (e) => {
+    const registerHandler = async (e) => {
         e.preventDefault();
 
         const config = {
@@ -23,7 +25,7 @@ export const Login = ({ history }) => {
         }
 
         try {
-            const { data } = await axios.post("/api/auth/login", { email, password }, config)
+            const { data } = await axios.post("/api/auth/register", {username, email, password}, config)
 
             localStorage.setItem("authToken", data.token)
 
@@ -39,10 +41,14 @@ export const Login = ({ history }) => {
 
     return(
     <div>
-            <h2> Login </h2>
-            <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
+            <h2> Register </h2>
+            <p>create a new account</p>
             {error && <span className="error-message"> { error } </span>}
-            <form onSubmit={loginHandler}>
+            <form onSubmit={registerHandler}>
+                <div className="login-form-control">
+                    <input type="text" required id="name" placeholder="Username" 
+                    value={username} onChange={(e) => setUsername(e.target.value)} />
+                </div>
                 <div className="login-form-control">
                     <input type="email" required id="email" value={email} 
                     onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
@@ -51,10 +57,12 @@ export const Login = ({ history }) => {
                     <input type="password" required id="password" value={password} 
                     onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </div>
-                <button type="submit" className="btn">Login</button>
+                <button type="submit" className="btn">Register</button>
+
+                <span>Already have an account? <Link to="/login">Login</Link></span>
             </form>
         </div>
     )
 }
 
-export default Login;
+export default Register;
