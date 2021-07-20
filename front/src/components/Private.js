@@ -6,11 +6,11 @@ export const Private = ( {history} ) => {
     const [privateData, setPrivateData] = useState('')
 
     useEffect(() => {
-        if (!localStorage.getItem("authToken")) {
+       if (!localStorage.getItem("authToken")) {
             history.push("/login")
-        }
+        } 
 
-        const fetchPrivateData = async () => {
+        const fetchPrivateData = async() => {
             const config = {
                 header: {
                     "Content-Type": "application/json",
@@ -18,12 +18,13 @@ export const Private = ( {history} ) => {
                 }
             }
 
-            try {
+        try {
                 const { data } = await axios.get("/api/private", config)
                 setPrivateData(data.data)
-            } catch (error) {
+
+        } catch (error) {
                 localStorage.removeItem("authToken")
-                setError("Please login")
+                setError("Please login, access denied")
             }
         }
 
@@ -36,11 +37,12 @@ export const Private = ( {history} ) => {
     }
 
     return (
-        error ? <span className="error-message">{ error }</span> :
-        <> 
+        error ? (<span className="error-message">{ error }</span>) :
+        (<div> 
+        <p>Signed in as</p>
         {privateData}
         <button onClick={logoutHandler}>Log out</button>
-        </>
+        </div> )
     )
 }
 

@@ -17,20 +17,31 @@ import { GlobalProvider } from './context/GlobalState';
 
 import './App.css';
 
-function App() {
+const App = () => {
 
     return (
+        <> 
+        <GlobalProvider>
+        <Router>
+            <div className="container">
+            <Navbar />
+            <Switch> 
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Register}/>
+            <Route exact path='/projects' component={Projects}/>
+            <Route exact path="/main" component={History}/>
+            <PrivateRoute exact path="/" component={Private}/>
+            </Switch>
+            </div>
+        </Router>
+        </GlobalProvider>
+        </>
+
+        /*
         <GlobalProvider>
             <Router>
-                <PrivateRoute exact path="/" component={Private}/>
                 <Navbar />
                 <Switch>
-                    <Route path='/login'>
-                        <Login />
-                    </Route>
-                    <Route path='/register'>
-                        <Register />
-                    </Route>
                     <Route path='/projects'>
                         <Projects />
                     </Route>
@@ -47,7 +58,9 @@ function App() {
             </Router>
 
            
-        </GlobalProvider>
+        </GlobalProvider> 
+        </> 
+        */
     )
 }
 
