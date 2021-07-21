@@ -127,6 +127,13 @@ input[type='email']  {
 
 p {
   padding: 10px 0px 5px 0px;
+  text-decoration: none;
+}
+
+a {
+  outline: none;
+  color: #a87974;
+  text-decoration: none;
 }
 
 .list {
