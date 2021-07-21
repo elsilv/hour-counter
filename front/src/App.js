@@ -23,16 +23,23 @@ const App = () => {
         <> 
         <GlobalProvider>
         <Router>
-            <div className="container">
             <Navbar />
             <Switch> 
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path='/projects' component={Projects}/>
-            <Route exact path="/main" component={History}/>
+            <Route exact path="/main">
+                        <Header />
+                        <Private />
+                        <div className="container">
+                            <TimeSpend />
+                            <HoursUsedLeft />
+                            <History />
+                            <AddHours />
+                        </div>
+            </Route>
             <PrivateRoute exact path="/" component={Private}/>
             </Switch>
-            </div>
         </Router>
         </GlobalProvider>
         </>

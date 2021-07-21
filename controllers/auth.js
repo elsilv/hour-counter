@@ -2,11 +2,11 @@ const User = require('../models/User');
 const ErrorResponse = require('../utils/errorResponse');
 
 exports.register = async (req, res, next) => {
-    const { username, email, name, password } = req.body;
+    const { username, email, password } = req.body;
 
     try {
         const user = await User.create({
-            username, email, name, password
+            username, email, password
         })
 
         sendToken(user, 201, res);

@@ -26,9 +26,8 @@ export const Login = ({ history }) => {
             const { data } = await axios.post("/api/auth/login", { email, password }, config)
 
             localStorage.setItem("authToken", data.token)
-            console.log(data.token)
 
-            history.push("/")  // main?
+            history.push("/")
         } catch (error) {
             setError(error.response.data.error)
             setTimeout(() => {

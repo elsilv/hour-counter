@@ -16,17 +16,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    name: {
-        type: String
-    },
     password: {
         type: String,
         required: true,
         minlength: 4,
         select: false
-    },
-    resetPasswordToken: String,
-    resetPasswordExpire: Date
+    }
 }); 
 
 userSchema.pre("save", async function(next) {

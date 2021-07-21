@@ -38,10 +38,14 @@ export const Private = ( {history} ) => {
 
     return (
         error ? (<span className="error-message">{ error }</span>) :
-        (<div> 
-        <p>Signed in as</p>
-        {privateData}
+        (<div className="container"> 
+        <h1>Hello!</h1> 
+        <h3> { privateData } </h3>
         <button onClick={logoutHandler}>Log out</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum. Pellentesque auctor risus efficitur metus gravida egestas. 
+            Aliquam lacinia feugiat dolor, a bibendum eros. Quisque maximus turpis a erat tempor tempor. Aliquam ut erat sed nulla gravida rutrum eget sit amet ligula. 
+            Nullam ultrices, tortor vel varius congue, neque dui porta massa, nec tincidunt neque nulla at ex. In sed justo nisi. In tempor erat nec dui tincidunt, 
+            bibendum vestibulum enim dignissim. Sed dui purus, semper nec maximus quis, ornare vel velit. Maecenas eu rhoncus tellus, sed interdum mi. </p>
         </div> )
     )
 }

@@ -17,7 +17,7 @@ export const NavbarData = [
     {
         title: 'Login',
         path: '/login',
-        icon: <AiIcons.AiOutlineLogin />,
+        icon: <AiIcons.AiFillRightCircle />,
         cName: 'nav-text'
-    },
+    }
 ]
