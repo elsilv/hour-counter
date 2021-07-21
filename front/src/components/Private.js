@@ -12,7 +12,7 @@ export const Private = ( {history} ) => {
 
         const fetchPrivateData = async() => {
             const config = {
-                header: {
+                headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${localStorage.getItem("authToken")}`
                 }
