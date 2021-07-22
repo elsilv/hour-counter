@@ -51,7 +51,7 @@ export const GlobalProvider = ( {children} ) => {
         }
 
         try {
-            const res = await axios.post('/api//workingHours', usedHours, config)
+            const res = await axios.post('/api/workingHours', usedHours, config)
             dispatch({
                 type: 'ADD_HOURS', 
                 payload: res.data.data
