@@ -21,7 +21,13 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 4,
         select: false
-    }
+    },
+    projects: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Project'
+          }
+    ]
 }); 
 
 userSchema.pre("save", async function(next) {

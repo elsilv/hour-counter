@@ -9,12 +9,10 @@ const projectSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    workingHours: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'workingHour'
-        }
-    ]
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 const Project = mongoose.model('Project', projectSchema)
