@@ -1,10 +1,20 @@
+const jwt = require('jsonwebtoken');
+const config = require('config');
 const Project = require('../models/Project');
 const User = require('../models/User');
+
+const getTokenFrom = request => {
+    const authorization = request.get('authorization')
+    if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+      return authorization.substring(7)
+    }
+    return null
+  }
 
 // GET /api/projects
 exports.getProjects = async (req, res, next) => {
     try {
-        const projects = await Project.find();
+        const projects = await Project.find().populate('user', { username: 1, email: 1 });
     
         return res.status(200).json({
             success: true,
@@ -22,11 +32,18 @@ exports.getProjects = async (req, res, next) => {
 // POST /api/projects
 exports.addProjects = async (req, res, next) => {
     try {
-        const { name, amount } = req.body;
+        const { name, amount } = req.body
 
-        const user = await User.findById(req.body.userId)
+        const token = getTokenFrom(req)
+        const decodedToken = jwt.verify(token, config.get('jwtSecret'))
 
-        const project = await Project.create(req.body);
+        if (!token || !decodedToken.id) {
+          return response.status(401).json({ error: 'token missing or invalid' })
+        }
+
+        const user = await User.findById(decodedToken.id)
+
+        const project = await Project.create(req.body)
         project.user = user._id
 
         const savedProject = await project.save()
@@ -52,7 +69,7 @@ exports.deleteProjects = async (req, res, next) => {
         const project = await Project.findById(req.params.id);
 
         if(project) {
-            await project.remove();
+            await project.remove()
             return res.status(200).json({
                 success: true
             })
