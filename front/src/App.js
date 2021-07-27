@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { Header } from './components/Header';
 import { TimeSpend } from './components/TimeSpend.js';
 import { HoursUsedLeft } from './components/HoursUsedLeft';
@@ -25,11 +25,12 @@ const App = () => {
 
     return (
         <> 
-        <GlobalProvider>
+         <GlobalProvider>
         <Router>
             <Navbar />
             <Switch> 
             <Route exact path="/login" component={Login}/>
+            <Route exact path="/logout" component={Logout}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/main">
                         <Header />
@@ -41,23 +42,22 @@ const App = () => {
                             <AddHours />
                         </div>
             </Route>
-            <Route exact path="/logout" component={Logout}/>
+
+            <GlobalProvider2>
+            <Route exact path="/projects">
+                <Header /> 
+                 <Projects />
+                 <ProjectList />
+            </Route> 
+            <Route path="/kissa"> 
+                <Redirect to="/login" />
+            </Route>
+            </GlobalProvider2>
             <PrivateRoute exact path="/" component={Private}/>
+            
             </Switch>
         </Router>
         </GlobalProvider>
-        
-        <GlobalProvider2>
-        <Router>
-            <Navbar />
-            <Switch> 
-                <Route exact path='/projects'> 
-                 <Projects />
-                 <ProjectList />
-                </Route> 
-             </Switch>
-        </Router>
-        </GlobalProvider2>
         </>
     )
 }

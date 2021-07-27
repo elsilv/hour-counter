@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-export const Logout = ( {history} ) => {
+export const Logout = () => {
+
+    const history = useHistory();
 
     const logoutHandler = () => {
         localStorage.removeItem("authToken")
-        history.push("/login")
+        history.push('/login')
     }
 
     return (

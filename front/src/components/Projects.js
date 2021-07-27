@@ -7,7 +7,9 @@ export const Projects = () => {
 
     const [name, setName] = useState('');
     const [amount, setAmount] = useState(0);
+    // eslint-disable-next-line
     const [user, setUser] = useState('');
+  
 
     useEffect(() => {
         addProject();

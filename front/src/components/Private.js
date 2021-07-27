@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
-export const Private = ( {history} ) => {
+export const Private = ( ) => {
     const [error, setError] = useState('')
     const [privateData, setPrivateData] = useState('')
 
+    const history = useHistory();
+    
     useEffect(() => {
        if (!localStorage.getItem("authToken")) {
             history.push("/login")
@@ -43,9 +46,7 @@ export const Private = ( {history} ) => {
         <h3> { privateData } </h3>
         <button onClick={logoutHandler}>Log out</button>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum. Pellentesque auctor risus efficitur metus gravida egestas. 
-            Aliquam lacinia feugiat dolor, a bibendum eros. Quisque maximus turpis a erat tempor tempor. Aliquam ut erat sed nulla gravida rutrum eget sit amet ligula. 
-            Nullam ultrices, tortor vel varius congue, neque dui porta massa, nec tincidunt neque nulla at ex. In sed justo nisi. In tempor erat nec dui tincidunt, 
-            bibendum vestibulum enim dignissim. Sed dui purus, semper nec maximus quis, ornare vel velit. Maecenas eu rhoncus tellus, sed interdum mi. </p>
+            Aliquam lacinia feugiat dolor, a bibendum eros. Quisque maximus turpis a erat tempor tempor. </p>
         </div> )
     )
 }

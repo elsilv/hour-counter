@@ -23,7 +23,7 @@ export const NavbarData = [
     {
         title: 'Logout',
         path: '/logout',
-        icon: <AiIcons.AiFillRightCircle />,
+        icon: <AiIcons.AiFillLeftCircle />,
         cName: 'nav-text'
     }
 ]

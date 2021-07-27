@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
-export const Login = ({ history }) => {
+export const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
+    const history = useHistory();
+
     useEffect(() => {
         if (localStorage.getItem("authToken")) {
-            history.push("/")
+            history.push("/main")
         }
     }, [history])
 
@@ -27,7 +29,7 @@ export const Login = ({ history }) => {
 
             localStorage.setItem("authToken", data.token)
 
-            history.push("/")
+            history.push("/main")
         } catch (error) {
             setError(error.response.data.error)
             setTimeout(() => {
