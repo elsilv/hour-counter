@@ -8,8 +8,9 @@ import { AddHours } from './components/AddHours';
 import { Navbar } from './components/Navbar';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
-import { Projects } from './components/Projects';
+import { Logout } from './components/Logout';
 
+import { Projects } from './components/Projects';
 import { ProjectList } from './components/ProjectList';
 
 import { Private } from './components/Private';
@@ -40,6 +41,7 @@ const App = () => {
                             <AddHours />
                         </div>
             </Route>
+            <Route exact path="/logout" component={Logout}/>
             <PrivateRoute exact path="/" component={Private}/>
             </Switch>
         </Router>

@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 export const NavbarData = [
     {
         title: 'Home',
-        path: '/',
+        path: '/main',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
@@ -17,6 +17,12 @@ export const NavbarData = [
     {
         title: 'Login',
         path: '/login',
+        icon: <AiIcons.AiFillRightCircle />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Logout',
+        path: '/logout',
         icon: <AiIcons.AiFillRightCircle />,
         cName: 'nav-text'
     }

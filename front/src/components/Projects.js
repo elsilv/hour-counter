@@ -14,11 +14,6 @@ export const Projects = () => {
         // eslint-disable-next-line
     }, []);
 
-    const logoutHandler = () => {
-        localStorage.removeItem("authToken")
-    }
-
-
     const onSubmit = e => {
         e.preventDefault();
 
@@ -46,8 +41,6 @@ export const Projects = () => {
             {localStorage.getItem('authToken') !== null && 
             <>
             <p>You are logged in</p>
-
-            <button className="btn" onClick={logoutHandler}>Log out</button>
 
             <form onSubmit={onSubmit}>
                 <div className="form-control">
