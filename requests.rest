@@ -50,6 +50,21 @@ POST http://localhost:5000/api/auth/login HTTP/1.1
 content-type: application/json
 
 {
-    "email": "sposti",
+    "email": "kissa@koira",
+    "password": "00000"
+}
+
+###
+
+GET http://localhost:5000/api/projects 
+
+###
+
+
+POST http://localhost:5000/api/projects HTTP/1.1
+content-type: application/json
+
+{
+    "name": "sposti",
     "password": "123456"
 }

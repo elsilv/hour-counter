@@ -7,8 +7,6 @@ const initialState = {
     error: null 
 }
 
-const token = localStorage.getItem('token')
-
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider2 = ( {children} ) => {

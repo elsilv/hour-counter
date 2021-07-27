@@ -4,8 +4,8 @@ const { getProjects, addProjects, deleteProjects } = require('../controllers/pro
 const { protect } = require('../middleware/auth');
 
 router.route('/')
-    .get(protect, getProjects)
-    .post(addProjects);
+    .get(getProjects)
+    .post(protect, addProjects);
 
 router.route('/:id')
     .delete(deleteProjects);

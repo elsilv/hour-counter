@@ -14,6 +14,10 @@ export const Projects = () => {
         // eslint-disable-next-line
     }, []);
 
+    const logoutHandler = () => {
+        localStorage.removeItem("authToken")
+    }
+
 
     const onSubmit = e => {
         e.preventDefault();
@@ -43,6 +47,8 @@ export const Projects = () => {
             <>
             <p>You are logged in</p>
 
+            <button className="btn" onClick={logoutHandler}>Log out</button>
+
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="text">Project name</label>
@@ -57,67 +63,7 @@ export const Projects = () => {
 
             </>}
 
-            
         </div>
         </>
     )
 }
-
-
-/*
-import { GlobalContext } from '../context/GlobalState';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-
-export const Projects = () => {
-    const [name, setName] = useState('');
-    const [amount, setAmount] = useState(0);
-    const [user, setUser] = useState('');
-    const [error, setError] = useState('');
-
-    const onSubmit = async (e) => {
-        e.preventDefault();
-
-        const config = {
-            header: {
-                "Content-type": "application/json"
-            }
-        }
-
-        try {
-            const req = await axios.post("/api/projects", {name, amount, user}, config)
-            console.log(`${req}`)
-
-        } catch(error) {
-            setError(error.response.data.error)
-        }
-    }
-
-    return (
-        <div>
-            <h4>Add a new project</h4>
-
-            {localStorage.getItem('authToken') === null && <p>Please log in first, <Link to="/login">Login</Link></p>}
-            {localStorage.getItem('authToken') !== null && 
-            <>
-            <p>You are logged in</p>
-            <form onSubmit={onSubmit}>
-                <div className="form-control">
-                    <label htmlFor="text">Project name</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter text..." />
-                </div>
-                <div className="form-control">
-                    <label htmlFor="amount">How much time do you want to spend?</label>
-                    <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
-                </div>
-                <button className="btn">Add new project</button>
-            </form> 
-
-            </>}
-
-            
-        </div>
-    )
-}
-
-*/

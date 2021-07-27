@@ -49,7 +49,6 @@ const App = () => {
         <Router>
             <Navbar />
             <Switch> 
-                
                 <Route exact path='/projects'> 
                  <Projects />
                  <ProjectList />
