@@ -10,10 +10,14 @@ import { Login } from './components/Login';
 import { Register } from './components/Register';
 import { Projects } from './components/Projects';
 
+import { ProjectsUsed } from './components/ProjectsUsed';
+import { ProjectList } from './components/ProjectList';
+
 import { Private } from './components/Private';
 import PrivateRoute from './components/PrivateRoute';
 
 import { GlobalProvider } from './context/GlobalState';
+import { GlobalProvider2 } from './context/ProjectState';
 
 import './App.css';
 
@@ -27,7 +31,6 @@ const App = () => {
             <Switch> 
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>
-            <Route exact path='/projects' component={Projects}/>
             <Route exact path="/main">
                         <Header />
                         <Private />
@@ -42,32 +45,20 @@ const App = () => {
             </Switch>
         </Router>
         </GlobalProvider>
+        
+        <GlobalProvider2>
+        <Router>
+            <Navbar />
+            <Switch> 
+                
+                <Route exact path='/projects'> 
+                 <Projects />
+                 <ProjectList />
+                </Route> 
+             </Switch>
+        </Router>
+        </GlobalProvider2>
         </>
-
-        /*
-        <GlobalProvider>
-            <Router>
-                <Navbar />
-                <Switch>
-                    <Route path='/projects'>
-                        <Projects />
-                    </Route>
-                    <Route path="/main">
-                        <Header />
-                        <div className="container">
-                            <TimeSpend />
-                            <HoursUsedLeft />
-                            <History />
-                            <AddHours />
-                        </div>
-                    </Route>
-                </Switch>
-            </Router>
-
-           
-        </GlobalProvider> 
-        </> 
-        */
     )
 }
 
