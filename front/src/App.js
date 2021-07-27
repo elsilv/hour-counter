@@ -10,7 +10,6 @@ import { Login } from './components/Login';
 import { Register } from './components/Register';
 import { Projects } from './components/Projects';
 
-import { ProjectsUsed } from './components/ProjectsUsed';
 import { ProjectList } from './components/ProjectList';
 
 import { Private } from './components/Private';

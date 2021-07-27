@@ -1,13 +1,19 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/ProjectState';
 
 export const Projects = () => {
+    const { addProject } = useContext(GlobalContext);
+
     const [name, setName] = useState('');
     const [amount, setAmount] = useState(0);
     const [user, setUser] = useState('');
 
-    const { addProject } = useContext(GlobalContext);
+    useEffect(() => {
+        addProject();
+        // eslint-disable-next-line
+    }, []);
+
 
     const onSubmit = e => {
         e.preventDefault();
@@ -20,12 +26,11 @@ export const Projects = () => {
 
         if (name.length > 1 & amount !== 0) { 
            addProject(newProject); 
-           console.log(newProject)
         }
         
         setName('');
         setAmount(0);
-        setUser('');
+        setUser('60f91c788b820c315c2d2fcf');
     }
 
     return (

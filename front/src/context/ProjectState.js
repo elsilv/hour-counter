@@ -7,6 +7,8 @@ const initialState = {
     error: null 
 }
 
+const token = localStorage.getItem('token')
+
 export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider2 = ( {children} ) => {
@@ -46,7 +48,8 @@ export const GlobalProvider2 = ( {children} ) => {
     async function addProject(projects) {
         const config = {
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("authToken")}`
             }
         }
 
