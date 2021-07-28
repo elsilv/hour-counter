@@ -67,9 +67,13 @@ exports.addProjects = async (req, res, next) => {
 exports.deleteProjects = async (req, res, next) => {
     try {
         const project = await Project.findById(req.params.id);
+        const user = await User.findById(project.user)
 
         if(project) {
+            user.projects = user.projects.remove(project)
             await project.remove()
+            await user.save()
+
             return res.status(200).json({
                 success: true
             })
