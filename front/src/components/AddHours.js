@@ -13,7 +13,8 @@ export const AddHours = () => {
         const newHistory = {
             id: Math.floor(Math.random() * 100000),
             text: text,
-            amount: +amount
+            amount: +amount,
+            project: "610115c1f61e543f1479c023"
         }
 
         if (text.length > 1 & amount !== 0) { 

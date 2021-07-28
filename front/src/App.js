@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { TimeSpend } from './components/TimeSpend.js';
 import { HoursUsedLeft } from './components/HoursUsedLeft';
@@ -49,12 +49,8 @@ const App = () => {
                  <Projects />
                  <ProjectList />
             </Route> 
-            <Route path="/kissa"> 
-                <Redirect to="/login" />
-            </Route>
             </GlobalProvider2>
             <PrivateRoute exact path="/" component={Private}/>
-            
             </Switch>
         </Router>
         </GlobalProvider>

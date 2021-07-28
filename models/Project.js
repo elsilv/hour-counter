@@ -12,7 +12,13 @@ const projectSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    workingHours: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'WorkingHour'
+          }
+    ]
 })
 
 const Project = mongoose.model('Project', projectSchema)

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 export const Logout = () => {
-
     const history = useHistory();
 
     const logoutHandler = () => {
@@ -15,7 +14,7 @@ export const Logout = () => {
         {localStorage.getItem('authToken') === null && <p>Please log in first, <Link to="/login">Login</Link></p>}
         {localStorage.getItem('authToken') !== null && 
             <div className="container"> 
-            <h1>Time Tracking</h1> 
+            <h2>Time Tracking</h2> 
             <button className="btn" onClick={logoutHandler}>Log out</button>
             </div>  
         }

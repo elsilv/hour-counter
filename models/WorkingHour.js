@@ -13,6 +13,10 @@ const workingHoursSchema = new mongoose.Schema({
     created : {
         type: Date,
         default: Date.now
+    },
+    project: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Project'
     }
 }); 
 

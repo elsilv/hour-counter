@@ -1,9 +1,10 @@
 const WorkingHour = require('../models/WorkingHour');
+const Project = require('../models/Project');
 
 // GET /api/workingHours 
 exports.getWorkingHours = async (req, res, next) => {
     try {
-        const workingHours = await WorkingHour.find();
+        const workingHours = await WorkingHour.find().populate('Project', { name: 1, amount: 1 });
     
         return res.status(200).json({
             success: true,
@@ -21,9 +22,16 @@ exports.getWorkingHours = async (req, res, next) => {
 // POST /api/workingHours
 exports.addWorkingHours = async (req, res, next) => {
     try {
-        const { text, amount } = req.body;
+        const body = req.body
+        const workingHour = await WorkingHour.create(body)
 
-        const workingHour = await WorkingHour.create(req.body);
+        const project = await Project.findById(body.project) 
+        workingHour.project = project._id
+
+        const savedWorkingHour = await workingHour.save()
+        project.workingHours = project.workingHours.concat(savedWorkingHour._id)
+        await project.save()
+
         return res.status(201).json({
             success: true,
             data: workingHour
