@@ -48,9 +48,13 @@ exports.addWorkingHours = async (req, res, next) => {
 exports.deleteWorkingHours = async (req, res, next) => {
     try {
         const workingHour = await WorkingHour.findById(req.params.id);
-
+        const project = await Project.findById(workingHour.project) 
+    
         if(workingHour) {
-            await workingHour.remove();
+            project.workingHours = project.workingHours.remove(workingHour)
+            await workingHour.remove()
+            await project.save()
+
             return res.status(200).json({
                 success: true
             })
