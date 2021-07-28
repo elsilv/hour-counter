@@ -8,11 +8,14 @@ export const ProjectsUsed = (props) => {
     const amount = props.projects.amount;
 
     return (
-        <li className="minus">
-                    {props.projects.name} <span>{amount}</span> 
-                    {props.projects.user.email} 
+       <>
+        <div className="container">
+                   <h3>{props.projects.name}</h3> 
+                   <p>Hours used: {amount}</p> 
+                   <p>{props.projects.user.email}</p> 
                     <button onClick={() => deleteProject(props.projects._id)}
-                    className="delete-btn">  <AiIcons.AiOutlineCloseCircle/> </button>
-        </li>
+                    className="delete-project">  <AiIcons.AiOutlineCloseCircle/> </button>
+        </div>         
+      </>
     )
 }

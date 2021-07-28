@@ -12,11 +12,13 @@ export const ProjectList = () => {
 
     return (
         <>
-            <h3>Projects</h3>
+            <h3>Your projects</h3>
+            <div class="projects-info">
             <ul className="list">
                 {projects.map
                     (projects => ( <ProjectsUsed key={projects.id} projects={projects}/> ) ) }    
             </ul>
+            </div>
         </>
     )
 }

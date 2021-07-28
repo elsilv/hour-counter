@@ -81,6 +81,16 @@ body {
   line-height: 20px;
 }
 
+.delete-project {
+  background: #324c4a;
+  border: 0;
+  box-shadow: none;
+  color: #a87974;
+  font-size: 25px;
+  line-height: 20px;
+  transform: translate(1250%, -425%);
+}
+
 label {
   display: inline-block;
   margin: 10px 0;
@@ -229,6 +239,42 @@ span {
   margin-left: 16px;
 }
 
+.projects-info {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  text-align: justify;
+  text-justify: inter-word; 
+}
+
+.projects-info div {
+    border-bottom: #a87974 5px solid;
+    background: #324c4a;
+    box-shadow: 10px 0 10px #283d3b;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    flex: 300px; 
+}
+
+.projects-info div a {
+    padding: 0.4rem;
+    align-self: flex-end; 
+}
+
+.projects-info div a:hover {
+    color: #a87974;
+    transition: all 0.8s ease-out; 
+}
+
+.projects-info div:hover {
+    opacity: 0.6;
+    border-color: #925851;
+    transition: all 0.8s ease-out; 
+}
+ 
 #main-footer {
   text-align: center;
   padding: 0.5rem 0 0 0.5rem;
