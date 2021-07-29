@@ -12,6 +12,7 @@ import { Logout } from './components/Logout';
 
 import { Projects } from './components/Projects';
 import { ProjectList } from './components/ProjectList';
+import { ProjectPage } from './components/ProjectPage';
 
 import { Private } from './components/Private';
 import PrivateRoute from './components/PrivateRoute';
@@ -49,6 +50,9 @@ const App = () => {
                  <Projects />
                  <ProjectList />
             </Route> 
+            <Route path="/projects/:id">
+                <ProjectPage />
+            </Route>
             </GlobalProvider2>
             <PrivateRoute exact path="/" component={Private}/>
             </Switch>

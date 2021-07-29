@@ -88,7 +88,12 @@ body {
   color: #a87974;
   font-size: 25px;
   line-height: 20px;
-  transform: translate(1250%, -425%);
+  transform: translate(1250%, -625%);
+}
+
+.delete-project:hover {
+  border-color: #925851;
+  transition: all 0.8s ease-out;
 }
 
 label {
@@ -264,13 +269,8 @@ span {
     align-self: flex-end; 
 }
 
-.projects-info div a:hover {
-    color: #a87974;
-    transition: all 0.8s ease-out; 
-}
-
 .projects-info div:hover {
-    opacity: 0.6;
+    opacity: 1;
     border-color: #925851;
     transition: all 0.8s ease-out; 
 }
