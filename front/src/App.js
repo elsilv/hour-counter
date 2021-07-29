@@ -51,7 +51,9 @@ const App = () => {
                  <ProjectList />
             </Route> 
             <Route path="/projects/:id">
+            <Header /> 
                 <ProjectPage />
+                
             </Route>
             </GlobalProvider2>
             <PrivateRoute exact path="/" component={Private}/>

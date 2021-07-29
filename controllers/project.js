@@ -14,7 +14,9 @@ const getTokenFrom = request => {
 // GET /api/projects
 exports.getProjects = async (req, res, next) => {
     try {
-        const projects = await Project.find().populate('user', { username: 1, email: 1 });
+        const projects = await Project.find()
+                            .populate('user', { username: 1, email: 1 })
+                            .populate('WorkingHour', { text: 1, amount: 1 })
     
         return res.status(200).json({
             success: true,

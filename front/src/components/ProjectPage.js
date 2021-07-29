@@ -1,15 +1,29 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/ProjectState';
 
 export const ProjectPage = () => { 
-    const id = ProjectFunction()
+    useEffect(() => {
+        getProjects();
+        // eslint-disable-next-line
+    }, []);
 
+    const id = ProjectFunction()
     const { projects, getProjects } = useContext(GlobalContext);
+    const project = projects.find(project => project._id === id)
 
     return (
         <> 
-         <p>{id}</p>
+         <h2>{project.name}</h2>
+         <p>{project.amount}</p>
+         <p>{project.user.username}</p>
+         <ul>
+         {project.workingHours.map(workingHour =>
+             <li>
+                {workingHour}
+            </li>
+      )} </ul>
+      <p></p>
         </>    
     )
 }
