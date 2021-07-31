@@ -5,12 +5,12 @@ import * as AiIcons from 'react-icons/ai';
 export const UsedHours = (props) => {
     const { deleteHistory } = useContext(GlobalContext);
 
-    const amount = props.usedHours.amount;
+    const amount = props.workingHour.amount
 
     return (
-        <li className="minus">
-                    {props.usedHours.text} <span>{amount}</span> 
-                    <button onClick={() => deleteHistory(props.usedHours._id)}
+        <li>
+                    {props.workingHour.text} <span>{amount}</span> 
+                    <button onClick={() => deleteHistory(props.workingHour._id)}
                     className="delete-btn">  <AiIcons.AiOutlineCloseCircle/> </button>
         </li>
     )

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { TimeSpend } from './components/TimeSpend.js';
 import { HoursUsedLeft } from './components/HoursUsedLeft';
-import { History } from './components/History';
 import { AddHours } from './components/AddHours';
 import { Navbar } from './components/Navbar';
 import { Login } from './components/Login';
@@ -39,7 +38,6 @@ const App = () => {
                         <div className="container">
                             <TimeSpend />
                             <HoursUsedLeft />
-                            <History />
                             <AddHours />
                         </div>
             </Route>
@@ -51,9 +49,12 @@ const App = () => {
                  <ProjectList />
             </Route> 
             <Route path="/projects/:id">
-            <Header /> 
+            <div className="container">
                 <ProjectPage />
-                
+                <TimeSpend />
+                <HoursUsedLeft />
+                <AddHours />
+            </div>    
             </Route>
             </GlobalProvider2>
             <PrivateRoute exact path="/" component={Private}/>
