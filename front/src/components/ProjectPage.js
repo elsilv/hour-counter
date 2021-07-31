@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/ProjectState';
 
 import { UsedHours } from './UsedHours';
+import { AddHours } from './AddHours';
 
 export const ProjectPage = () => { 
     useEffect(() => {
@@ -44,6 +45,8 @@ export const ProjectPage = () => {
                 </li>
              )} 
         </ul>
+
+        <AddHours />
         </>    
     )
 }

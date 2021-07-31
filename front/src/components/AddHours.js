@@ -1,11 +1,15 @@
 import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState';
+import { useParams } from 'react-router-dom';
 
 export const AddHours = () => {
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
+    const [project, setProject] = useState('');
 
     const { addHours } = useContext(GlobalContext);
+
+    const { id } = useParams()
 
     const onSubmit = e => {
         e.preventDefault();
@@ -14,15 +18,16 @@ export const AddHours = () => {
             id: Math.floor(Math.random() * 100000),
             text: text,
             amount: +amount,
-            project: "610115c1f61e543f1479c023"
+            project: id
         }
 
         if (text.length > 1 & amount !== 0) { 
             addHours(newHistory); 
         }
         
-        setText('');
-        setAmount(0);
+        setText('')
+        setAmount(0)
+        setProject('')
     }
 
     return (

@@ -43,17 +43,16 @@ const App = () => {
             </Route>
 
             <GlobalProvider2>
+            <Route path="/projects/:id">
+            <div className="container">
+                <ProjectPage />
+            </div>    
+            </Route>
             <Route exact path="/projects">
                 <Header /> 
                  <Projects />
                  <ProjectList />
             </Route> 
-            <Route path="/projects/:id">
-            <div className="container">
-                <ProjectPage />
-                <AddHours />
-            </div>    
-            </Route>
             </GlobalProvider2>
             <PrivateRoute exact path="/" component={Private}/>
             </Switch>
