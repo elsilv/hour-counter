@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Header } from './components/Header';
-import { TimeSpend } from './components/TimeSpend.js';
-import { HoursUsedLeft } from './components/HoursUsedLeft';
-import { AddHours } from './components/AddHours';
 import { Navbar } from './components/Navbar';
 import { Login } from './components/Login';
 import { Register } from './components/Register';
@@ -25,38 +22,39 @@ const App = () => {
 
     return (
         <> 
-         <GlobalProvider>
-        <Router>
-            <Navbar />
-            <Switch> 
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/logout" component={Logout}/>
-            <Route exact path="/register" component={Register}/>
-            <Route exact path="/main">
-                        <Header />
-                        <Private />
-                        <div className="container">
-                            <TimeSpend />
-                            <HoursUsedLeft />
-                            <AddHours />
-                        </div>
-            </Route>
+        <GlobalProvider>
+            <Router>
+                <Navbar />
+                <Switch> 
+                <Route exact path="/login" component={Login}/>
+                <Route exact path="/logout">
+                    <Header />
+                    <Logout />
+                </Route>
+                <Route exact path="/register" component={Register}/>
+                <Route exact path="/main">
+                    <Header />
+                <div className="container"> 
+                    <Private />
+                </div>            
+                </Route>
 
-            <GlobalProvider2>
-            <Route path="/projects/:id">
-            <div className="container">
-                <ProjectPage />
-            </div>    
-            </Route>
-            <Route exact path="/projects">
-                <Header /> 
-                 <Projects />
-                 <ProjectList />
-            </Route> 
-            </GlobalProvider2>
-            <PrivateRoute exact path="/" component={Private}/>
-            </Switch>
-        </Router>
+                <GlobalProvider2>
+                
+                <Route exact path="/projects">
+                    <Header /> 
+                    <Projects />
+                    <ProjectList />
+                </Route> 
+                <Route path="/projects/:id">
+                <div className="container">
+                    <ProjectPage />
+                </div>    
+                </Route>
+                </GlobalProvider2>
+                <PrivateRoute exact path="/" component={Private}/>
+                </Switch>
+            </Router>
         </GlobalProvider>
         </>
     )

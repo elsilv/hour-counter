@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 export const AddHours = () => {
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
+     // eslint-disable-next-line
     const [project, setProject] = useState('');
 
     const { addHours } = useContext(GlobalContext);

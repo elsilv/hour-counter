@@ -42,7 +42,7 @@ export const Private = ( ) => {
     return (
         error ? (<span className="error-message">{ error }</span>) :
         (<div className="container"> 
-        <h1>Hello!</h1> 
+        <h2>Hello!</h2> 
         <h3> { privateData } </h3>
         <button onClick={logoutHandler}>Log out</button>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum. Pellentesque auctor risus efficitur metus gravida egestas. 

@@ -40,9 +40,7 @@ export const ProjectPage = () => {
 
          <ul className="list">
              {project.workingHours.map(workingHour =>
-                <li key={workingHour._id}>
                     <UsedHours key={workingHour._id} workingHour={workingHour} />
-                </li>
              )} 
         </ul>
 
@@ -57,5 +55,4 @@ export function ProjectFunction() {
     return (
       id
     ) 
-      
 }

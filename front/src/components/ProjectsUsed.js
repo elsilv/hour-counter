@@ -12,7 +12,7 @@ export const ProjectsUsed = (props) => {
        <>
         <div className="container">
                    <h3>{props.projects.name}</h3> 
-                   <p>Hours used: {amount}</p>  
+                   <p>Hours planned to use: <span>{amount}</span></p>  
                    <p>{props.projects.user.email}</p> 
                    <Link to={`/projects/${props.projects._id}`}>{props.projects.name}</Link>
                    <p>Tässä voisi olla lyhyt käyttäjän lisäämä kuvaus projektista</p>
