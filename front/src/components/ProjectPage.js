@@ -15,12 +15,13 @@ export const ProjectPage = () => {
     return (
         <> 
          <h2>{project.name}</h2>
-         <p>{project.amount}</p>
-         <p>{project.user.username}</p>
+         <p>Hours to use total: {project.amount}</p>
          <ul>
+             <h3>History</h3>
          {project.workingHours.map(workingHour =>
-             <li>
-                {workingHour}
+             <li key={workingHour._id}>
+                {workingHour.text}
+                {workingHour.amount}
             </li>
       )} </ul>
       <p></p>

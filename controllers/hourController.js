@@ -4,7 +4,7 @@ const Project = require('../models/Project');
 // GET /api/workingHours 
 exports.getWorkingHours = async (req, res, next) => {
     try {
-        const workingHours = await WorkingHour.find().populate('Project', { name: 1, amount: 1 });
+        const workingHours = await WorkingHour.find();
     
         return res.status(200).json({
             success: true,
