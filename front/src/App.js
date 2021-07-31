@@ -51,8 +51,6 @@ const App = () => {
             <Route path="/projects/:id">
             <div className="container">
                 <ProjectPage />
-                <TimeSpend />
-                <HoursUsedLeft />
                 <AddHours />
             </div>    
             </Route>

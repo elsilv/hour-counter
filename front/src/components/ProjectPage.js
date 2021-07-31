@@ -14,12 +14,27 @@ export const ProjectPage = () => {
     const { projects, getProjects } = useContext(GlobalContext);
     const project = projects.find(project => project._id === id)
 
+    const amounts = project.workingHours.map(workingHours => workingHours.amount)
+    const totalAmounts = amounts.reduce((x, total) => (x += total), 0);
+
     return (
         <> 
          <h2>{project.name}</h2>
+         <h3>Time you have used: {totalAmounts} hours</h3>
          <p></p>
          <p>Hours to use total: {project.amount}</p>
-         <p></p>
+
+         <div className="hour-container">
+            <div>
+                <h3>Total hours</h3>
+                <p className="hours-plus">{totalAmounts}</p>
+            </div>
+            <div>
+            <h3>Hours left</h3>
+            <p className="hours-minus">{project.amount - totalAmounts}</p>
+            </div>
+        </div>
+
          <h3>History</h3>
 
          <ul className="list">

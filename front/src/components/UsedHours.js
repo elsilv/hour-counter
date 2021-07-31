@@ -9,9 +9,9 @@ export const UsedHours = (props) => {
 
     return (
         <li>
-                    {props.workingHour.text} <span>{amount}</span> 
-                    <button onClick={() => deleteHistory(props.workingHour._id)}
-                    className="delete-btn">  <AiIcons.AiOutlineCloseCircle/> </button>
+            {props.workingHour.text} <span>{amount}</span> 
+            <button onClick={() => deleteHistory(props.workingHour._id)}
+                className="delete-btn">  <AiIcons.AiOutlineCloseCircle/> </button>
         </li>
     )
 }
