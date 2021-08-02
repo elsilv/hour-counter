@@ -15,6 +15,10 @@ export const ProjectPage = () => {
     const { projects, getProjects } = useContext(GlobalContext);
     const project = projects.find(project => project._id === id)
 
+    if(!project) {
+        return (<h3>Please wait</h3>)
+    }
+
     const amounts = project.workingHours.map(workingHours => workingHours.amount)
     const totalAmounts = amounts.reduce((x, total) => (x += total), 0);
 
