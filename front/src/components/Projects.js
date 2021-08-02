@@ -10,7 +10,6 @@ export const Projects = () => {
     // eslint-disable-next-line
     const [user, setUser] = useState('');
   
-
     useEffect(() => {
         addProject();
         // eslint-disable-next-line
@@ -25,13 +24,15 @@ export const Projects = () => {
             user: "60f91c788b820c315c2d2fcf"
         }
 
-        if (name.length > 1 & amount !== 0) { 
+        if (name.length > 4 && amount !== 0) { 
            addProject(newProject); 
+
+           setName('');
+           setAmount(0);
+           setUser('60f91c788b820c315c2d2fcf');
         }
         
-        setName('');
-        setAmount(0);
-        setUser('60f91c788b820c315c2d2fcf');
+        
     }
 
     return (

@@ -8,6 +8,7 @@ router.route('/')
     .post(protect, addProjects);
 
 router.route('/:id')
+    .get(getProjects)
     .delete(deleteProjects);
 
 module.exports = router;
