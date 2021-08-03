@@ -30,7 +30,9 @@ h4 {
 }
 
 body {
-  background: #283d3b;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #283d3b, #254b4b, #283d3b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #283d3b, #254b4b, #283d3b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +47,13 @@ body {
 .container {
   margin: 30px auto;
   width: 400px;
+}
+
+.text-area {
+  margin: 30px auto;
+  width: 400px;
+  justify-content: center;
+  text-align: justify;
 }
 
 * {
@@ -71,7 +80,7 @@ body {
 }
 
 .delete-btn {
-  background: #283d3b;
+  background: none;
   color: #a87974;
   border: 0;
   position: absolute;

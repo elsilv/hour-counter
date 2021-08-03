@@ -45,8 +45,10 @@ export const Private = ( ) => {
         <h2>Hello!</h2> 
         <h3> { privateData } </h3>
         <button onClick={logoutHandler}>Log out</button>
+        <div className="text-area">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum. Pellentesque auctor risus efficitur metus gravida egestas. 
             Aliquam lacinia feugiat dolor, a bibendum eros. Quisque maximus turpis a erat tempor tempor. </p>
+        </div>
         </div> )
     )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 export const Header = () => {
     return (
         <h1>
-            Time Tracking
+            Time Tracker
         </h1>
     )
 }
