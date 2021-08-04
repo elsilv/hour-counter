@@ -16,7 +16,9 @@ import PrivateRoute from './components/PrivateRoute';
 import { GlobalProvider } from './context/GlobalState';
 import { GlobalProvider2 } from './context/ProjectState';
 
-import './App.css';
+import { LandingPage } from './components/LandingPage';
+
+//import './App.css';
 
 const App = () => {
 
@@ -32,6 +34,7 @@ const App = () => {
                     <Logout />
                 </Route>
                 <Route exact path="/register" component={Register}/>
+                <Route exact path="/index" component={LandingPage}/>
                 <Route exact path="/main">
                     <Header />
                 <div className="container"> 

@@ -105,6 +105,12 @@ body {
   transition: all 0.8s ease-out;
 }
 
+.log-text {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 label {
   display: inline-block;
   margin: 10px 0;
@@ -122,10 +128,21 @@ label {
   width: 50%;
 }
 
-.btn:hover {
+.btn:hover, .btn-log:hover {
   opacity: 0.6;
   border-color: #772e25;
   transition: all 0.8s ease-out;
+}
+
+.btn-log {
+  background: #a87974;
+  color: #edddd4;
+  border: 0;
+  border-radius: 2px;
+  font-size: 18px;
+  padding: 7px;
+  margin: 30px 0 0px;
+  width: 50%;
 }
 
 input[type='text'],

@@ -11,10 +11,11 @@ export const Logout = () => {
 
     return (
         <> 
-        {localStorage.getItem('authToken') === null && <p>Please log in first, <Link to="/login">Login</Link></p>}
+        {localStorage.getItem('authToken') === null && 
+        <div className="log-text"> Please log in first, <Link to="/login">Login</Link></div>}
         {localStorage.getItem('authToken') !== null && 
-            <div className="container"> 
-            <button className="btn" onClick={logoutHandler}>Log out</button>
+            <div className="log-text"> 
+            <button className="btn-log" onClick={logoutHandler}>Log out</button>
             </div>  
         }
         </>

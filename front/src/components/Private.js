@@ -40,7 +40,7 @@ export const Private = ( ) => {
     }
 
     return (
-        error ? (<span className="error-message">{ error }</span>) :
+        error ? (<div className="text-area">{ error }</div>) :
         (<div className="container"> 
         <h2>Hello!</h2> 
         <h3> { privateData } </h3>
