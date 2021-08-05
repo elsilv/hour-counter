@@ -44,11 +44,7 @@ export const AddHours = () => {
                     <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
                 </div>
                 <button className="btn">Add hours</button>
-            </form>
-
-            <footer id="main-footer">
-                 Copyright &copy; 2021
-            </footer>
+            </form> 
         </>
     )
 }

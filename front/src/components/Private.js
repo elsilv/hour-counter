@@ -41,9 +41,9 @@ export const Private = ( ) => {
 
     return (
         error ? (<div className="text-area">{ error }</div>) :
-        (<div className="container"> 
-        <h2>Hello!</h2> 
-        <h3> { privateData } </h3>
+        (<div className="content"> 
+        
+        <p> { privateData } </p>
         <button onClick={logoutHandler}>Log out</button>
         <div className="text-area">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum. Pellentesque auctor risus efficitur metus gravida egestas. 

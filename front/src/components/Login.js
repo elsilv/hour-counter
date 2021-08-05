@@ -40,7 +40,7 @@ export const Login = () => {
     }
 
     return(
-    <div>
+    <div className="container2">
             <h2> Login </h2>
             <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
             {error && <span className="error-message"> { error } </span>}

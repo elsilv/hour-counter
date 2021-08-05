@@ -24,13 +24,16 @@ export const ProjectList = () => {
 
     return (
         <>
+        <section className="pages-list">
+        <div className="text">
             <h3>Your projects</h3>
             <div class="projects-info">
             <ul className="list">
                 {usersProjects.map
                     (projects => ( <ProjectsUsed key={projects.id} projects={projects}/> ) ) }    
             </ul>
-            </div>
+            </div></div>
+            </section>    
         </>
     )
 }

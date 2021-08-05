@@ -19,6 +19,7 @@ import { GlobalProvider2 } from './context/ProjectState';
 import { LandingPage } from './components/LandingPage';
 
 //import './App.css';
+import './Landing.css';
 
 const App = () => {
 
@@ -36,10 +37,7 @@ const App = () => {
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/index" component={LandingPage}/>
                 <Route exact path="/main">
-                    <Header />
-                <div className="container"> 
-                    <Private />
-                </div>            
+                    <LandingPage/>          
                 </Route>
 
                 <GlobalProvider2>
@@ -50,7 +48,7 @@ const App = () => {
                     <ProjectList />
                 </Route> 
                 <Route path="/projects/:id">
-                <div className="container">
+                <div className="container2">
                     <ProjectPage />
                 </div>    
                 </Route>

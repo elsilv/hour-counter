@@ -37,7 +37,8 @@ export const Projects = () => {
 
     return (
         <>
-            <div>
+            <section className="pages">
+            <div className="text">
             <h4>Add a new project</h4>
 
             {localStorage.getItem('authToken') === null && <p>Please log in first, <Link to="/login">Login</Link></p>}
@@ -60,6 +61,7 @@ export const Projects = () => {
             </>}
 
         </div>
+        </section>
         </>
     )
 }

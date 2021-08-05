@@ -1,9 +1,15 @@
 import React from 'react'
+import * as AiIcons from 'react-icons/ai';
 
 export const Header = () => {
     return (
-        <h1>
-            Time Tracker
-        </h1>
+        <> 
+            <div className="header">
+            <AiIcons.AiOutlineClockCircle size={50}/>
+                <div className="title">
+                    Time Tracker
+                </div>
+            </div>
+        </>
     )
 }

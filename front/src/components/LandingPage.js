@@ -8,7 +8,7 @@ export const LandingPage = () => {
         <header className="showcase">
         <title>Time Tracker</title>
             <div className="content">
-                <imc src="logo.png" className="logo" alt="Time Tracker" />
+            <AiIcons.AiOutlineClockCircle size={100}/>
                 <div className="title">
                     Welcome to use Time Tracker
                 </div>
