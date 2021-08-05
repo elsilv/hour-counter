@@ -14,7 +14,7 @@ export const ProjectsUsed = (props) => {
                    <h3>{props.projects.name}</h3> 
                    <p>Hours planned to use: <span>{amount}</span></p>  
                    <p>{props.projects.user.email}</p> 
-                   <Link to={`/projects/${props.projects._id}`}>{props.projects.name}</Link>
+                   <Link to={`/projects/${props.projects._id}`}><AiIcons.AiOutlineArrowRight/> {props.projects.name}</Link>
                    <p>Tässä voisi olla lyhyt käyttäjän lisäämä kuvaus projektista</p>
                    <button onClick={() => deleteProject(props.projects._id)}
                    className="delete-project">  <AiIcons.AiOutlineCloseCircle/> 

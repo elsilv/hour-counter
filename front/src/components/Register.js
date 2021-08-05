@@ -39,7 +39,7 @@ export const Register = ({ history }) => {
     }
 
     return(
-    <div>
+    <div className="container2">
             <h2> Register </h2>
             <p>create a new account</p>
             {error && <span className="error-message"> { error } </span>}

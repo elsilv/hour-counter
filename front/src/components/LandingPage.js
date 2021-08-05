@@ -13,7 +13,7 @@ export const LandingPage = () => {
                     Welcome to use Time Tracker
                 </div>
                 <div className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum.
+                With Time Tracker you can elegantly control your projects.
                 </div>
             </div>
         </header>
@@ -23,17 +23,17 @@ export const LandingPage = () => {
                 <div>
                 <AiIcons.AiFillHome size={32}/>
                 <h3>Home</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>This is the home page.</p>
                 </div>
                 <div>
                 <AiIcons.AiFillRightCircle size={32}/>
                 <h3>Sign Up</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Sign up by using the navbar. If you do have an account, you can just log in.</p>
                 </div>
                 <div>
                 <AiIcons.AiFillInfoCircle size={32}/>
                 <h3>Info</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Check out more information on the info page.</p>
                 </div>
             </div>
         </section>
@@ -46,8 +46,9 @@ export const LandingPage = () => {
                     </div>
                     <div>
                         <h3>About Us</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit eu odio eu vestibulum. Pellentesque auctor risus efficitur metus gravida egestas. 
-                           Aliquam lacinia feugiat dolor, a bibendum eros. Quisque maximus turpis a erat tempor tempor.</p>
+                        <p>With Time Tracker you can elegantly control how much time you spend with your projects. You need to just sign up and try to add some
+                           new projects.
+                        </p>
                     </div>
                 </div>
             </div>

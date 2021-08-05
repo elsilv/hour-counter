@@ -13,7 +13,7 @@ h2 {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     font-size: 3rem;
-    color: #a87974;
+    color: #e6e8e6;
     padding: 30px 0px 30px;
   }
   
@@ -23,7 +23,7 @@ h2 {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    color: #d2bab8;
+    color: #e6e8e6;
     margin-top: 5rem;
 }
 
@@ -32,7 +32,7 @@ h2 {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    color: #d2bab8;
+    color: #e6e8e6;
     margin: 0;
 }
 
@@ -118,7 +118,7 @@ p {
 .header .title {
         font-size: 2.2rem;
         margin-top: 0rem;
-        margin-bottom: 20rem;
+        margin-bottom: 2rem;
         font-family: 'Montserrat', sans-serif;
 }
 
@@ -166,7 +166,7 @@ p {
 
 .bg-light {
     background: #e6e8e6;
-    color: #565e59;;   
+    color: #444;;   
 }
 
 .bg-dark {
@@ -229,7 +229,7 @@ a {
     color: #a87974;
     font-size: 25px;
     line-height: 20px;
-    transform: translate(1250%, -625%);
+    transform: translate(1400%, -625%);
   }
   
   .delete-project:hover {
@@ -251,7 +251,7 @@ label {
 }
 
 .btn {
-    background: #a87974;
+    background: #565e59;
     color: #edddd4;
     display: block;
     border: 0;
@@ -264,12 +264,12 @@ label {
   
   .btn:hover, .btn-log:hover {
     opacity: 0.6;
-    border-color: #772e25;
+    border-color: #444;
     transition: all 0.8s ease-out;
   }
   
   .btn-log {
-    background: #a87974;
+    background: #565e59;
     color: #edddd4;
     border: 0;
     border-radius: 2px;
@@ -281,7 +281,7 @@ label {
   
   input[type='text'],
   input[type='number'] {
-    border: 1px solid #a87974;
+    border: 1px solid #565e59;
     border-radius: 2px;
     display: block;
     font-size: 16px;
@@ -292,7 +292,7 @@ label {
   input[type='username'],
   input[type='password'],
   input[type='email']  {
-    border: 1px solid #a87974;
+    border: 1px solid #565e59;
     border-radius: 2px;
     display: block;
     font-size: 16px;
@@ -311,7 +311,7 @@ label {
   }
   
   .projects-info div {
-      border-bottom: #a87974 5px solid;
+      border-bottom: #565e59 5px solid;
       background: #324c4a;
       box-shadow: 10px 0 10px #283d3b;
       padding: 2.5rem 2.5rem;
@@ -322,7 +322,7 @@ label {
   
   .projects-info div:hover {
       opacity: 1;
-      border-color: #925851;
+      border-color: #444;
       transition: all 0.8s ease-out; 
   }  
   
