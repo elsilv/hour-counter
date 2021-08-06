@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { GlobalContext } from '../context/GlobalState';
+import { GlobalContext2 } from '../context/GlobalState';
 import { useParams } from 'react-router-dom';
 
 export const AddHours = () => {
@@ -8,7 +8,7 @@ export const AddHours = () => {
      // eslint-disable-next-line
     const [project, setProject] = useState('');
 
-    const { addHours } = useContext(GlobalContext);
+    const { addHours } = useContext(GlobalContext2);
 
     const { id } = useParams()
 

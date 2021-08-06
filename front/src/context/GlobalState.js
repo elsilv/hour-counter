@@ -7,7 +7,7 @@ const initialState = {
     error: null 
 }
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext2 = createContext(initialState);
 
 export const GlobalProvider = ( {children} ) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -64,11 +64,11 @@ export const GlobalProvider = ( {children} ) => {
         }
     }
 
-    return (<GlobalContext.Provider value={ { usedHours: state.usedHours, 
+    return (<GlobalContext2.Provider value={ { usedHours: state.usedHours, 
                                               deleteHistory, 
                                               addHours, 
                                               getWorkingHours, 
                                               error: state.error } }>
         {children}
-    </GlobalContext.Provider>);
+    </GlobalContext2.Provider>);
 }

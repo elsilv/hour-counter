@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { GlobalContext } from '../context/ProjectState';
+import { GlobalContext2 } from '../context/GlobalState';
 
 import { UsedHours } from './UsedHours';
 import { AddHours } from './AddHours';
@@ -8,18 +9,23 @@ import { AddHours } from './AddHours';
 export const ProjectPage = () => { 
     useEffect(() => {
         getProjects();
+        getWorkingHours();
         // eslint-disable-next-line
     }, []);
 
     const id = ProjectFunction()
-    const { projects, getProjects } = useContext(GlobalContext);
+    const { projects, getProjects } = useContext(GlobalContext)
+    const { usedHours, getWorkingHours } = useContext(GlobalContext2)
+
     const project = projects.find(project => project._id === id)
+    var projectHours = usedHours.filter(workingHour => workingHour.project === id)
+
 
     if(!project) {
         return (<h3>Please wait</h3>)
     }
 
-    const amounts = project.workingHours.map(workingHours => workingHours.amount)
+    const amounts = projectHours.map(workingHours => workingHours.amount)
     const totalAmounts = amounts.reduce((x, total) => (x += total), 0);
 
     return (
@@ -43,7 +49,7 @@ export const ProjectPage = () => {
          <h3>History</h3>
 
          <ul className="list">
-             {project.workingHours.map(workingHour =>
+             {projectHours.map(workingHour =>
                     <UsedHours key={workingHour._id} workingHour={workingHour} />
              )} 
         </ul>

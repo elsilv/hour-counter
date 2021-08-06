@@ -1,9 +1,9 @@
 import React, {useContext} from 'react'
-import { GlobalContext } from '../context/GlobalState';
+import { GlobalContext2 } from '../context/GlobalState';
 import * as AiIcons from 'react-icons/ai';
 
 export const UsedHours = (props) => {
-    const { deleteHistory } = useContext(GlobalContext);
+    const { deleteHistory } = useContext(GlobalContext2);
 
     const amount = props.workingHour.amount
 
