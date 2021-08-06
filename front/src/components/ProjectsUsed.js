@@ -10,7 +10,7 @@ export const ProjectsUsed = (props) => {
 
     return (
        <>
-        <div className="container">
+        <div>
                    <h3>{props.projects.name}</h3> 
                    <p>Hours planned to use: <span>{amount}</span></p>  
                    <p>{props.projects.user.email}</p> 

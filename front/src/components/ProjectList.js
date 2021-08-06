@@ -32,7 +32,7 @@ export const ProjectList = () => {
         <section className="pages-list">
         <div className="text">
             <h3>Your projects</h3>
-            <div class="projects-info">
+            <div className="projects-info">
             <ul className="list">
                 {usersProjects.map
                     (projects => ( <ProjectsUsed key={projects.id} projects={projects}/> ) ) }    
