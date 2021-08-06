@@ -14,7 +14,7 @@ h2 {
     margin: 0;
     font-size: 3rem;
     color: #e6e8e6;
-    padding: 30px 0px 30px;
+    padding: 30px 0px 60px;
   }
   
 .pages {
@@ -189,6 +189,7 @@ a {
     display: flex;
     justify-content: space-between;
     position: relative;
+    line-height: 2rem;
     padding: 10px;
     margin: 2px;
 }
@@ -197,7 +198,7 @@ a {
     background: #324c4a;
     display: flex;
     justify-content: space-between;
-    margin: 20px 0;
+    margin: 20px 0 40px 0;
   
     padding: 1rem;
     border-bottom: #a87974 3px solid;
@@ -215,7 +216,7 @@ a {
     color: #a87974;
     border: 0;
     position: absolute;
-    transform: translate(-95%, -25%);
+    transform: translate(-95%, -19%);
     padding: 20px 5px;
     font-size: 15px;
     line-height: 20px;
@@ -416,16 +417,16 @@ span {
   }
  
   @media(max-width: 560px) {
-    h1 {
-        padding: 1rem;
-        margin-top: 10vh;
-        text-align: center;
-      }
-    
-    .container {
-        width: 300px;
-        align-items: center;
-        text-align: center;
+  
+    .pages-list {
+      width: 300px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .showcase {
+      filter: blur(0px);
+      -webkit-filter: blur(0px);
     }
     
     .showcase::after {
@@ -446,14 +447,42 @@ span {
         grid-template-columns: 1fr;
     }
 
-    .services div {
-        border-bottom: #333 dashed 1px;
-        padding: 1.2rem 1rem;
+    .projects-info {
+      width: 300px;
+      align-items: center;
     }
+
+    .projects-info div {
+      padding: 1.5rem 1.5rem;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+
+    .pages-list {
+      align-items: center;
+      margin: 10%;
+  }
+
+  .container2 {
+    width: 300px;
+    align-items: center;
+    margin-bottom: 10rem;
+  }
+
 }
 
 @media(max-height: 500px) {
-    .content {
+  .showcase {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    margin: 0 0 40px 0;
+  }
+
+  .showcase::after {
+    border-bottom: none;
+  }
+
+  .content {
         top: 5%;
-    }
+  }
 }
