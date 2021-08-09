@@ -56,7 +56,7 @@ export const Register = ({ history }) => {
                     <input type="password" required id="password" value={password} 
                     onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </div>
-                <button type="submit" className="btn">Register</button>
+                <button id="register-btn" type="submit" className="btn">Register</button>
 
                 <span>Already have an account? <Link to="/login">Login</Link></span>
             </form>

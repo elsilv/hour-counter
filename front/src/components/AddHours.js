@@ -37,13 +37,13 @@ export const AddHours = () => {
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="text">What did you do?</label>
-                    <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
+                    <input id="workingHour-text" type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
                 </div>
                 <div className="form-control">
                     <label htmlFor="amount">How much time did you spend?</label>
-                    <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
+                    <input id="workingHour-amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
                 </div>
-                <button className="btn">Add hours</button>
+                <button id="addHour-btn" className="btn">Add hours</button>
             </form> 
         </>
     )

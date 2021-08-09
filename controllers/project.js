@@ -17,14 +17,12 @@ exports.getProjects = async (req, res, next) => {
         const projects = await Project.find()
                             .populate('user', { username: 1, email: 1 })
                             .populate('workingHours')
-                            
-    
 
         return res.status(200).json({
             success: true,
             count: projects.length,
             data: projects
-        });
+        })
     } catch (error) {
         return res.status(500).json({
             success: false,

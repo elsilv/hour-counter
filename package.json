@@ -7,7 +7,8 @@
     "start": "node server",
     "server": "nodemon server --ignore front",
     "front": "npm start --prefix front",
-    "dev": "concurrently \"npm run server\" \"npm run front\""
+    "dev": "concurrently \"npm run server\" \"npm run front\"",
+    "start:test": "cross-env NODE_ENV=test node app.js"
   },
   "repository": {
     "type": "git",

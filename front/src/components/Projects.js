@@ -31,8 +31,6 @@ export const Projects = () => {
            setAmount(0);
            setUser('60f91c788b820c315c2d2fcf');
         }
-        
-        
     }
 
     return (
@@ -49,13 +47,13 @@ export const Projects = () => {
             <form onSubmit={onSubmit}>
                 <div className="form-control">
                     <label htmlFor="text">Project name</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter text..." />
+                    <input id="project-name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter text..." />
                 </div>
                 <div className="form-control">
                     <label htmlFor="amount">How much time do you want to spend?</label>
-                    <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
+                    <input id="project-amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
                 </div>
-                <button className="btn">Add new project</button>
+                <button id="project-btn" className="btn">Add new project</button>
             </form> 
 
             </>}

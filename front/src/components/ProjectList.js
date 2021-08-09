@@ -6,15 +6,18 @@ const jwt = require('jsonwebtoken');
 
 export const ProjectList = () => {
     const { projects, getProjects } = useContext(GlobalContext)
-    const history = useHistory()
 
-    useEffect(() => {
-        getProjects();
-        // eslint-disable-next-line
-        if (!localStorage.getItem("authToken")) {
+    useEffect(() => {       
+      if (!localStorage.getItem("authToken")) {
             history.push("/login")
         }
-    }, [history, getProjects]);
+
+        getProjects();
+        // eslint-disable-next-line
+    }, []);
+
+    
+    const history = useHistory()
 
     const authToken = localStorage.getItem("authToken")
     const userId = jwt.decode(authToken)

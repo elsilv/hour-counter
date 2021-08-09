@@ -15,7 +15,7 @@ export const Logout = () => {
         <div className="log-text"> Please log in first, <Link to="/login">Login</Link></div>}
         {localStorage.getItem('authToken') !== null && 
             <div className="log-text"> 
-            <button className="btn-log" onClick={logoutHandler}>Log out</button>
+            <button id="logout-button" className="btn-log" onClick={logoutHandler}>Log out</button>
             </div>  
         }
         </>
