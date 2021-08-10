@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const Project = require('../models/Project');
 const User = require('../models/User');
+const WorkingHour = require('../models/WorkingHour');
 
 const getTokenFrom = request => {
     const authorization = request.get('authorization')
@@ -73,6 +74,7 @@ exports.deleteProjects = async (req, res, next) => {
 
         if(project) {
             user.projects = user.projects.remove(project)
+            await WorkingHour.deleteMany({project : req.params.id})
             await project.remove()
             await user.save()
 
