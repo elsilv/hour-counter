@@ -14,11 +14,34 @@ describe('Login ', function() {
       cy.get('#password').type('00000')
       cy.get('#login-button').click()
     })
+
+    it('login with wrong credentials', function() {
+      cy.visit('http://localhost:3000/login')
+      cy.contains('Sign Up')
+      cy.get('#email').type('kissa@koira')
+      cy.get('#password').type('wrong')
+      cy.get('#login-button').click()
+      cy.contains('Email or Password is wrong')
+    })
   })
 
-// Account have to be unique, so the test fails if types are not chanced.
-describe('Sign up ', function() {
+  // Test fails if types are not changed
+  /*
+  describe('Sign up with new account', function() {
     it('creating a new account works correct', function() {
+      cy.visit('http://localhost:3000/register')
+      cy.contains('Register')
+      cy.get('#name').type('testi22')
+      cy.get('#email').type('testi@tunnus22')
+      cy.get('#password').type('12345')
+      cy.get('#register-btn').click()
+      cy.wait(2000)
+      cy.contains('unique')
+    })
+  })  */ 
+
+describe('Sign up with account that already exists ', function() {
+    it('creating a new account fails if email or username is not unique', function() {
       cy.visit('http://localhost:3000/register')
       cy.contains('Register')
       cy.get('#name').type('testi')
@@ -26,8 +49,7 @@ describe('Sign up ', function() {
       cy.get('#password').type('12345')
       cy.get('#register-btn').click()
       cy.wait(2000)
-      cy.visit('http://localhost:3000/logout')
-      cy.contains('Log out')
+      cy.contains('unique')
     })
   })  
   
