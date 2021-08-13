@@ -7,6 +7,7 @@ export const Projects = () => {
 
     const [name, setName] = useState('');
     const [amount, setAmount] = useState(0);
+    const [description, setDescription] = useState('');
     // eslint-disable-next-line
     const [user, setUser] = useState('');
   
@@ -21,6 +22,7 @@ export const Projects = () => {
         const newProject = {
             name: name,
             amount: +amount,
+            description: description,
             user: "60f91c788b820c315c2d2fcf"
         }
 
@@ -29,6 +31,7 @@ export const Projects = () => {
 
            setName('');
            setAmount(0);
+           setDescription('');
            setUser('60f91c788b820c315c2d2fcf');
         }
     }
@@ -51,6 +54,10 @@ export const Projects = () => {
                 <div className="form-control">
                     <label htmlFor="amount">How much time do you want to spend?</label>
                     <input id="project-amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter hours..." />
+                </div>
+                <div className="form-control">
+                    <label htmlFor="description">Descripe your project</label>
+                    <input id="project-description" type="text-field" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Enter description..." />
                 </div>
                 <button id="project-btn" className="btn">Add new project</button>
             </form> 

@@ -13,6 +13,10 @@ const projectSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
+    description: {
+        type: String,
+        maxlength: 50
+    },
     workingHours: [
         {
             type: mongoose.Schema.Types.ObjectId,

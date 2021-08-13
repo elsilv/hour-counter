@@ -224,15 +224,13 @@ a {
     cursor: pointer;
   }
 
-  .delete-project-btn {
-    background: #324c4a;
-    border: 0;
-    box-shadow: none;
-    color: #a87974;
-    font-size: 25px;
-    line-height: 20px;
-    transform: translate(1500%, -525%);
+  .project-list-btn {
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0px 0px 0px 0px;
+    box-shadow: none;
+    color: #e6e8e6;
   }
   
   .delete-project:hover {
@@ -295,6 +293,7 @@ label {
   }
   
   input[type='text'],
+  input[type='text-field'],
   input[type='number'] {
     border: 1px solid #565e59;
     border-radius: 2px;
@@ -326,13 +325,26 @@ label {
   }
   
   .projects-info div {
-      border-bottom: #565e59 5px solid;
-      background: #324c4a;
-      box-shadow: 10px 0 10px #283d3b;
-      padding: 2.5rem 2.5rem;
-      margin-bottom: 1.5rem;
-      margin-right: 1rem;
-      flex: 300px; 
+    width: 75vh;
+    border-bottom: #565e59 5px solid;
+    background: #324c4a;
+    box-shadow: 10px 0 10px #283d3b;
+    padding: 2.5rem 2.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;  
+  }
+
+  .icons { 
+    margin-top: 0rem;
+  }
+
+  .icons p2 {
+    color: #e6e8e6;
+    cursor: pointer;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.6rem;
   }
   
   .projects-info div:hover {

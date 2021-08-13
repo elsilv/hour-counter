@@ -11,14 +11,22 @@ export const ProjectsUsed = (props) => {
     return (
        <>
         <div>
-                   <h3>{props.projects.name}</h3> 
+                   <h3>{props.projects.name} </h3> 
                    <p>Hours planned to use: <span>{amount}</span></p>  
-                   <Link id="page-link" to={`/projects/${props.projects._id}`}><AiIcons.AiOutlineArrowRight/> {props.projects.name}</Link>
-                   <p>Tässä voisi olla lyhyt käyttäjän lisäämä kuvaus projektista</p>
-                   <button onClick={() => deleteProject(props.projects._id)}
-                   className="delete-project-btn">  <AiIcons.AiOutlineCloseCircle/> 
-                   </button>
-        </div>         
+                   <p>{props.projects.description}</p>
+                   <p className="icons"> 
+                   <p2>
+                      <button className="project-list-btn" onClick={() => deleteProject(props.projects._id)}>  <AiIcons.AiOutlineCloseCircle size={20} title="Delete project"/> 
+                      </button>
+                    </p2>
+                    <p2>
+                      <Link className="project-list-btn" id="page-link" to={`/projects/${props.projects._id}`}><AiIcons.AiOutlineFolderOpen size={20} title="On project page"/></Link>
+                    </p2>
+                    <p2>
+                    <button className="project-list-btn" onClick>  <AiIcons.AiOutlineEdit size={20} title="Edit project"/> </button>
+                    </p2>
+                  </p>
+        </div>       
       </>
     )
 }
