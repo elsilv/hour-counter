@@ -11,7 +11,6 @@ connectMongoDB();
 
 const workingHours = require('./routes/workingHours')
 const projects = require('./routes/projects')
-//const user = require('./routes/user')
 
 const app = express();
 
@@ -21,8 +20,6 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/private', require('./routes/private'));
 app.use('/api/workingHours', workingHours);
 app.use('/api/projects', projects);
-//app.use('/api/user', user);
-
 
 app.use(errorHandler);
 

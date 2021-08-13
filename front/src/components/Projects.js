@@ -42,7 +42,6 @@ export const Projects = () => {
             {localStorage.getItem('authToken') === null && <p>Please log in first, <Link to="/login">Login</Link></p>}
             {localStorage.getItem('authToken') !== null && 
             <>
-            <p>You are logged in</p>
 
             <form onSubmit={onSubmit}>
                 <div className="form-control">

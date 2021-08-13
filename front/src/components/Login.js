@@ -11,7 +11,7 @@ export const Login = () => {
 
     useEffect(() => {
         if (localStorage.getItem("authToken")) {
-            history.push("/main")
+            history.push("/logout")
         }
     }, [history])
 
@@ -29,7 +29,7 @@ export const Login = () => {
 
             localStorage.setItem("authToken", data.token)
 
-            history.push("/main")
+            history.push("/projects")
         } catch (error) {
             setError(error.response.data.error)
             setTimeout(() => {

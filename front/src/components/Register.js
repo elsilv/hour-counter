@@ -45,7 +45,7 @@ export const Register = ({ history }) => {
             {error && <span className="error-message"> { error } </span>}
             <form onSubmit={registerHandler}>
                 <div className="login-form-control">
-                    <input type="text" required id="name" placeholder="Username" 
+                    <input type="username" required id="name" placeholder="Username" 
                     value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
                 <div className="login-form-control">

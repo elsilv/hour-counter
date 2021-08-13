@@ -1,6 +1,5 @@
 import React from 'react'
 import * as AiIcons from 'react-icons/ai';
-import '../Landing.css';
 
 export const LandingPage = () => {
     return (

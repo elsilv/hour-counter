@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 export const NavbarData = [
     {
         title: 'Home',
-        path: '/main',
+        path: '/',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
