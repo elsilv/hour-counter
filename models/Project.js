@@ -14,8 +14,7 @@ const projectSchema = new mongoose.Schema({
         ref: 'User'
     },
     description: {
-        type: String,
-        maxlength: 50
+        type: String
     },
     workingHours: [
         {

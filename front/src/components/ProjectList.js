@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ProjectsUsed } from './ProjectsUsed.js';
 import { GlobalContext } from '../context/ProjectState';
+import ReactTooltip from 'react-tooltip';
 import * as AiIcons from 'react-icons/ai';
 const jwt = require('jsonwebtoken');
 
@@ -35,14 +36,16 @@ export const ProjectList = () => {
         <section className="pages-list">
         <div className="text">
             <h3>Your projects </h3>
-            <button className="refresh-btn" onClick={() => getProjects()}>  <AiIcons.AiOutlineReload size={20}/> </button>
+            <ReactTooltip id="refresh" place="right" effect="float"/>
+            <button data-tip="Refresh list" data-for="refresh" className="refresh-btn" onClick={() => getProjects()}>  <AiIcons.AiOutlineReload size={20}/> </button>
             <div className="projects-info">
             <ul className="list">
                 {usersProjects.map
                     (projects => ( <ProjectsUsed key={projects.id} projects={projects}/> ) ) }    
             </ul>
-            </div></div>
-            </section>    
+            </div>
+        </div>
+        </section>    
         </>
     )
 }

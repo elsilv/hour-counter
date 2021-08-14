@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import ReactTooltip from 'react-tooltip'
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -41,16 +42,17 @@ export const Login = () => {
 
     return(
     <div className="container2">
+        <ReactTooltip />
             <h2> Login </h2>
             <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
             {error && <span className="error-message"> { error } </span>}
-            <form onSubmit={loginHandler}>
+            <form onSubmit={loginHandler} noValidate>
                 <div className="login-form-control">
-                    <input type="email" required id="email" value={email} 
+                    <input type="email" required id="email" value={email} data-tip="Add email"
                     onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                 </div>
                 <div className="login-form-control">
-                    <input type="password" required id="password" value={password} 
+                    <input type="password" required id="password" value={password} data-tip="Add password"
                     onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                 </div>
                 <button id="login-button" type="submit" className="btn">Login</button>

@@ -243,7 +243,7 @@ a {
     justify-content: center;
     text-align: center;
     margin-top: 220px;
-    font-size: 1.3rem;
+    line-height: 1.7rem;
 }
 
 label {
@@ -324,7 +324,7 @@ label {
     text-justify: inter-word; 
   }
   
-  .projects-info div {
+  .projects-info .one-project {
     width: 75vh;
     border-bottom: #565e59 5px solid;
     background: #324c4a;
@@ -347,13 +347,12 @@ label {
     padding: 0.6rem;
   }
   
-  .projects-info div:hover {
+  .projects-info div:hover:not(.icons p2) {
       opacity: 1;
       border-color: #444;
       transition: all 0.8s ease-out; 
   }  
   
-
 footer {
     padding: 1rem;
 }
