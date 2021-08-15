@@ -4,6 +4,7 @@ const colors = require('colors');
 const morgan = require('morgan');
 const connectMongoDB = require('./config/db');
 const errorHandler = require('./middleware/error');
+const path = require('path');
 
 dotenv.config( { path: '/.config/config.env'} )
 
@@ -22,6 +23,14 @@ app.use('/api/workingHours', workingHours);
 app.use('/api/projects', projects);
 
 app.use(errorHandler);
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('front/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'front', 'build', 'index.html'));
+    })
+}
 
 const PORT =  process.env.PORT || 5000;
 

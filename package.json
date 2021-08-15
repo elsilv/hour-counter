@@ -8,7 +8,8 @@
     "server": "nodemon server --ignore front",
     "front": "npm start --prefix front",
     "dev": "concurrently \"npm run server\" \"npm run front\"",
-    "start:test": "cross-env NODE_ENV=test node app.js"
+    "start:test": "cross-env NODE_ENV=test node app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front && npm run build --prefix front"
   },
   "repository": {
     "type": "git",
