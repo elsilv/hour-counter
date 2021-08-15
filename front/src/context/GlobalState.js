@@ -29,7 +29,7 @@ export const GlobalProvider = ( {children} ) => {
 
     async function deleteHistory(id) {
         try {
-            await axios.delete(`/api//workingHours/${id}`);
+            await axios.delete(`/api/workingHours/${id}`);
             dispatch({
                 type: 'DELETE_HISTORY', 
                 payload: id
