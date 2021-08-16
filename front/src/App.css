@@ -31,7 +31,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
     color: #e6e8e6;
     margin: 0;
 }
@@ -87,7 +86,6 @@ p {
     width: 300px;
     height: 350px;
     text-align: center;
-    text-justify: justify;
     transition: all 1000ms;
 }
 
@@ -111,7 +109,6 @@ p {
         margin-left: -145px;
         width: 300px;
         text-align: center;
-        text-justify: justify;
         line-height: 2rem;
 }
 
@@ -347,7 +344,7 @@ label {
     padding: 0.6rem;
   }
   
-  .projects-info div:hover:not(.icons p2) {
+  .projects-info div:hover {
       opacity: 1;
       border-color: #444;
       transition: all 0.8s ease-out; 
@@ -377,7 +374,6 @@ span {
   .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
-    size: 4rem;
     background: none;
   }
   

@@ -33,7 +33,7 @@ export const GlobalProvider2 = ( {children} ) => {
             dispatch({
                 type: 'DELETE_PROJECT', 
                 payload: id
-            });
+            })
         } catch (error) {
             dispatch({
                 type: 'PROJECT_ERROR',
@@ -56,7 +56,7 @@ export const GlobalProvider2 = ( {children} ) => {
             dispatch({
                 type: 'ADD_PROJECT', 
                 payload: res.data.data
-            });
+            })
         } catch (error) {
             dispatch({
                 type: 'PROJECT_ERROR',
