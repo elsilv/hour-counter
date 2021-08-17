@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom'
 import { NavbarData } from './NavbarData';
 import { IconContext } from 'react-icons';
+import { Twirl as Hamburger } from 'hamburger-react';
 
 export const Navbar = () => {
 
@@ -16,15 +15,12 @@ export const Navbar = () => {
     <IconContext.Provider value={{ color: '#d2bab8' }}> 
         <div className="navbar">
             <Link to="#" className='nav-click'>
-            <FaIcons.FaBars onClick={showSidebar} size={35}/>
+            <Hamburger toggled={sidebar} toggle={setSidebar} color="#e6e8e6"/>
             </Link>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
             <ul className='nav-menu-items' onClick={showSidebar}>
                 <li className="navbar-toggle">
-                    <Link to="#" className='menu-bars'>
-                        <AiIcons.AiOutlineClose />
-                    </Link>
                 </li>
                 {NavbarData.map((item, index) => {
                     return (
