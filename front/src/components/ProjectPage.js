@@ -5,6 +5,7 @@ import { GlobalContext2 } from '../context/GlobalState';
 
 import { UsedHours } from './UsedHours';
 import { AddHours } from './AddHours';
+import { PrintPage } from './PrintPage';
 
 export const ProjectPage = () => { 
     useEffect(() => {
@@ -20,7 +21,6 @@ export const ProjectPage = () => {
     const project = projects.find(project => project._id === id)
     var projectHours = usedHours.filter(workingHour => workingHour.project === id)
 
-
     if(!project) {
         return (<h3>Please wait</h3>)
     }
@@ -29,11 +29,12 @@ export const ProjectPage = () => {
     const totalAmounts = amounts.reduce((x, total) => (x += total), 0);
 
     return (
-        <> 
+        <>   
+       
          <h2>{project.name}</h2>
          <h3>Time you have used: {totalAmounts} hours</h3>
          <p></p>
-         <p>Hours to use total: {project.amount}</p>
+         <p>Hours to use total: {project.amount}</p>  
 
          <div className="hour-container">
             <div>
@@ -48,6 +49,7 @@ export const ProjectPage = () => {
 
          <h3>History</h3>
 
+         
          <ul className="list">
              {projectHours.map(workingHour =>
                     <UsedHours key={workingHour._id} workingHour={workingHour} />
@@ -55,7 +57,11 @@ export const ProjectPage = () => {
         </ul>
 
         <AddHours />
+        
+        <PrintPage project={project}
+                   totalAmounts={totalAmounts} />
         </>    
+        
     )
 }
 

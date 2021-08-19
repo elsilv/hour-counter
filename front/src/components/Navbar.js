@@ -15,7 +15,7 @@ export const Navbar = () => {
     <IconContext.Provider value={{ color: '#d2bab8' }}> 
         <div className="navbar">
             <Link to="#" className='nav-click'>
-            <Hamburger toggled={sidebar} toggle={setSidebar} color="#e6e8e6"/>
+            <Hamburger toggled={sidebar} toggle={setSidebar} color="#d2bab8"/>
             </Link>
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
