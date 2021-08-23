@@ -30,7 +30,6 @@ export const ProjectPage = () => {
 
     return (
         <>   
-       
          <h2>{project.name}</h2>
          <h3>Time you have used: {totalAmounts} hours</h3>
          <p></p>
@@ -49,7 +48,6 @@ export const ProjectPage = () => {
 
          <h3>History</h3>
 
-         
          <ul className="list">
              {projectHours.map(workingHour =>
                     <UsedHours key={workingHour._id} workingHour={workingHour} />
@@ -59,9 +57,9 @@ export const ProjectPage = () => {
         <AddHours />
         
         <PrintPage project={project}
-                   totalAmounts={totalAmounts} />
+                   totalAmounts={totalAmounts}
+                   projectHoursLi={projectHours} />
         </>    
-        
     )
 }
 

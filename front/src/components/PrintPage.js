@@ -3,12 +3,13 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import * as AiIcons from 'react-icons/ai';
 
-export const PrintPage = ({project, totalAmounts}) => { 
+export const PrintPage = ({project, totalAmounts, projectHoursLi}) => { 
     let response = {
         ProjectName: project.name, 
         projectId: project._id,
         amount: project.amount, 
-        totalAmounts: totalAmounts
+        totalAmounts: totalAmounts,
+        projectHoursLi: projectHoursLi
     }
 
     const downloadPdf = () => {

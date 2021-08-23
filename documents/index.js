@@ -1,5 +1,12 @@
-module.exports = ({ ProjectName, projectId, amount, totalAmounts }) => {
+module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi }) => {
     const today = new Date()
+
+   const list = 
+    projectHoursLi.map((workingHour) => {
+      return ( `<li>
+        ${workingHour.text}  ${workingHour.amount}
+      </li>`)
+    })
 
     return `
     <!doctype html>
@@ -14,10 +21,13 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts }) => {
              padding: 30px;
              border: 1px solid #eee;
              box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-             font-size: 16px;
+             font-size: 18px;
              line-height: 24px;
              font-family: 'Helvetica Neue', 'Helvetica',
              color: #555;
+             }
+            li {
+               list-style-type: none;
              }
              .margin-top {
              margin-top: 50px;
@@ -46,6 +56,7 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts }) => {
              color: #333;
              }
              .invoice-box table tr.information table td {
+             font-size: 22px;
              padding-bottom: 40px;
              }
              .invoice-box table tr.heading td {
@@ -109,17 +120,30 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts }) => {
                    </td>
                 </tr>
                 <tr class="heading">
-                   <td>Used hours:</td>
-                   <td>Total amount</td>
-                </tr>
-                <tr class="item">
-                   <td>Total Hours:</td>
-                   <td>${amount}</td>
-                </tr>
-                <tr class="item">
-                   <td>Time used:</td>
-                   <td>${totalAmounts}</td>
-                </tr>
+                <td>History:</td>
+                <td>Amount:</td>
+             </tr>
+             <tr class="item">
+                <td>Project name:</td>
+                <td>
+                <ul>
+                ${list}
+                </ul>
+                </td>
+             </tr>
+
+             <tr class="heading">
+             <td>Time used:</td>
+             <td>Total amount</td>
+          </tr>
+          <tr class="item">
+             <td>Set hours:</td>
+             <td>${amount}</td>
+          </tr>
+          <tr class="item">
+             <td>Hours used heretofore:</td>
+             <td>${totalAmounts}</td>
+          </tr>
              </table>
              <br />
           </div>

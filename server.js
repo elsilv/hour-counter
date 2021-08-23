@@ -42,7 +42,6 @@ app.get('/projects/fetch-pdf', (req, res) => {
     res.sendFile(`${__dirname}/result.pdf`)
 })
 
-
 // For Heroku
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('front/build'));

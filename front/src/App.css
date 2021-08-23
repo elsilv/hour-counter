@@ -456,11 +456,6 @@ span {
   span-nav {
     margin-left: 15px;
   }
-
-.printId {
-    visibility: hidden;
-    background: red;
-  }
  
   @media(max-width: 560px) {
 
