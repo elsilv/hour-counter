@@ -49,6 +49,7 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
              }
              .justify-center {
              text-align: center;
+             font-size: 22px;
              }
              .invoice-box table {
              width: 100%;

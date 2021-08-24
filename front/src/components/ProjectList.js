@@ -33,15 +33,16 @@ export const ProjectList = () => {
 
     return (
         <>
+        <ReactTooltip id="refresh" place="right" effect="float"/>
         <section className="pages-list">
         <div className="text">
             <h3>Your projects </h3>
-            <ReactTooltip id="refresh" place="right" effect="float"/>
+            
             <button data-tip="Refresh list" data-for="refresh" className="refresh-btn" onClick={() => getProjects()}>  <AiIcons.AiOutlineReload size={20}/> </button>
             <div className="projects-info">
             <ul className="list">
                 {usersProjects.map
-                    (projects => ( <ProjectsUsed key={projects.id} projects={projects}/> ) ) }    
+                    (projects => ( <ProjectsUsed key={projects._id} projects={projects}/> ) ) }    
             </ul>
             </div>
         </div>

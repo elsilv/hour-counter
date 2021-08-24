@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 import * as AiIcons from 'react-icons/ai';
+import ReactTooltip from 'react-tooltip';
 
 export const PrintPage = ({project, totalAmounts, projectHoursLi}) => { 
     let response = {
@@ -18,13 +19,14 @@ export const PrintPage = ({project, totalAmounts, projectHoursLi}) => {
             .then((res) => {
                 const pdfBlob = new Blob([res.data], { type: 'application/pdf' })
 
-                saveAs(pdfBlob, 'newPdf.pdf')
+                saveAs(pdfBlob, `pdf-${project._id}.pdf`)
             })
     } 
 
   return (
         <div>
-            <button className="toPdf-btn" onClick={() => downloadPdf()}><AiIcons.AiOutlineDownload size={30}/></button>
+            <ReactTooltip />
+            <button className="toPdf-btn" data-tip="Downloading pdf can take a while" onClick={() => downloadPdf()}><AiIcons.AiOutlineDownload size={30}/></button>
         </div>
     )
 }
