@@ -21,17 +21,17 @@ export const LandingPage = () => {
             <div className="container grid-3 center">
                 <div>
                 <AiIcons.AiFillHome size={32}/>
-                <h3>Home</h3>
+                <h3> <a className="landing-links" href="/">Home</a> </h3>
                 <p>This is the home page.</p>
                 </div>
                 <div>
                 <AiIcons.AiFillRightCircle size={32}/>
-                <h3>Sign Up</h3>
-                <p>Sign up by using the navbar. If you do have an account, you can just log in.</p>
+                <h3> <a className="landing-links" href="/register">Sign Up</a> </h3>
+                <p>Sign up by using the navbar. If you do have an account, you can just <a href="/login">log in.</a> </p>
                 </div>
                 <div>
                 <AiIcons.AiFillInfoCircle size={32}/>
-                <h3>Info</h3>
+                <h3> <a className="landing-links" href="/">Info</a> </h3>
                 <p>Check out more information on the info page.</p>
                 </div>
             </div>

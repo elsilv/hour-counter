@@ -375,6 +375,15 @@ footer p {
 span {
     margin-left: 0px;
 }
+
+.landing-links {
+  color: #e6e8e6;
+}
+
+.landing-links:hover {
+  color: #d2bab8;
+  transition: all 0.8s ease-out;
+}
      
 /* Navbar */
 .navbar {

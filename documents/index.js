@@ -1,10 +1,17 @@
 module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi }) => {
     const today = new Date()
 
-   const list = 
+   const listText = 
     projectHoursLi.map((workingHour) => {
       return ( `<li>
-        ${workingHour.text}  ${workingHour.amount}
+        ${workingHour.text}
+      </li>`)
+    })
+
+    const listAmount = 
+    projectHoursLi.map((workingHour) => {
+      return ( `<li>
+      ${workingHour.amount}h
       </li>`)
     })
 
@@ -26,8 +33,16 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
              font-family: 'Helvetica Neue', 'Helvetica',
              color: #555;
              }
-            li {
+             li {
                list-style-type: none;
+               text-decoration: none;
+             }
+             ul {
+               list-style-type: none;
+               text-decoration: none;
+             }
+             span {
+               margin-left: 50px;
              }
              .margin-top {
              margin-top: 50px;
@@ -117,20 +132,16 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
                             </td>
                          </tr>
                       </table>
-                   </td>
-                </tr>
-                <tr class="heading">
-                <td>History:</td>
-                <td>Amount:</td>
-             </tr>
-             <tr class="item">
-                <td>Project name:</td>
-                <td>
-                <ul>
-                ${list}
-                </ul>
-                </td>
-             </tr>
+                      </td>
+                      </tr>
+                      <tr class="heading">
+                         <td>History:</td>
+                         <td>Hours:</td>
+                      </tr>
+                      <tr class="item">
+                         <td>${listText}</td>
+                         <td>${listAmount}h</td>
+                      </tr>
 
              <tr class="heading">
              <td>Time used:</td>
@@ -146,6 +157,7 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
           </tr>
              </table>
              <br />
+             <h1 class="justify-center">Time left to use: ${amount - totalAmounts}h</h1>
           </div>
        </body>
     </html>
