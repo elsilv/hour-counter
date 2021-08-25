@@ -5,9 +5,12 @@ import ReactTooltip from 'react-tooltip';
 import * as AiIcons from 'react-icons/ai';
 
 export const ProjectsUsed = (props) => {
-    const { deleteProject } = useContext(GlobalContext);
+    const { deleteProject, changeStatus } = useContext(GlobalContext);
 
     const amount = props.projects.amount;
+
+    const label = props.projects.status
+    ? <AiIcons.AiOutlineCheckCircle size={20}/> : <AiIcons.AiOutlineBorder size={20}/>
 
     return (
        <>
@@ -26,7 +29,10 @@ export const ProjectsUsed = (props) => {
                     <u className="p2">
                       <button className="project-list-btn" data-tip="Remove project" onClick={() => deleteProject(props.projects._id)}>  <AiIcons.AiOutlineDelete size={20}/></button>
                     </u>
-                  </p>
+                    <u className="p2">
+                      <button data-tip="State of project" className="project-list-btn" onClick={() => changeStatus(props.projects._id)}>  {label} </button>
+                    </u>
+                  </p> 
         </div>       
       </>
     )

@@ -98,3 +98,22 @@ exports.deleteProjects = async (req, res, next) => {
         });
     }
 }
+
+// PUT /api/projects/:id
+exports.changeStatus = async (req, res, next) => {
+    try {
+        const project = await Project.findById(req.params.id);
+
+        if(project) {
+            await project.save()
+            return res.status(200).json({
+                success: true
+            })
+        }
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: 'Server error'
+        })
+    }
+}

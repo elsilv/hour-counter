@@ -16,6 +16,10 @@ export const Projects = () => {
         // eslint-disable-next-line
     }, []);
 
+    if(localStorage.getItem('authToken') === null) {
+        return ( <p>Please log in first, <Link to="/login">Login</Link></p> ) 
+    }
+
     const onSubmit = e => {
         e.preventDefault();
 
@@ -23,7 +27,8 @@ export const Projects = () => {
             name: name,
             amount: +amount,
             description: description,
-            user: "60f91c788b820c315c2d2fcf"
+            user: "60f91c788b820c315c2d2fcf",
+            status: true
         }
 
         if (name.length > 4 && amount !== 0) { 
@@ -42,7 +47,7 @@ export const Projects = () => {
             <div className="text">
             <h4>Add a new project</h4>
 
-            {localStorage.getItem('authToken') === null && <p>Please log in first, <Link to="/login">Login</Link></p>}
+      
             {localStorage.getItem('authToken') !== null && 
             <>
 
