@@ -27,13 +27,11 @@ export const Projects = () => {
             name: name,
             amount: +amount,
             description: description,
-            user: "60f91c788b820c315c2d2fcf",
-            status: true
+            user: "60f91c788b820c315c2d2fcf"
         }
 
         if (name.length > 4 && amount !== 0) { 
            addProject(newProject); 
-
            setName('');
            setAmount(0);
            setDescription('');

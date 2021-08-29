@@ -16,8 +16,9 @@ const projectSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    status: {
-        type: Boolean
+    compiled: {
+        type: Boolean,
+        default: false
     },
     workingHours: [
         {

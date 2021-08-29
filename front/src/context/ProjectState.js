@@ -65,12 +65,11 @@ export const GlobalProvider2 = ( {children} ) => {
         }
     }
 
-    async function changeStatus(id) {
-
+    async function changeCompiled(id) {
         try {
             await axios.put(`/api/projects/${id}`)
             dispatch({
-                type: 'CHANGE_STATUS', 
+                type: 'CHANGE_COMPILED', 
                 payload: id
             })
         } catch (error) {
@@ -85,7 +84,7 @@ export const GlobalProvider2 = ( {children} ) => {
                                               deleteProject, 
                                               addProject, 
                                               getProjects,
-                                              changeStatus,
+                                              changeCompiled,
                                               error: state.error } }>
         {children}
     </GlobalContext.Provider>);
