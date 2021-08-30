@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getProjects, addProjects, deleteProjects, changeCompiled } = require('../controllers/project');
+const { getProjects, addProjects, deleteProjects, changeCompleted } = require('../controllers/project');
 const { protect } = require('../middleware/auth');
 
 router.route('/')
@@ -9,7 +9,7 @@ router.route('/')
 
 router.route('/:id')
     .get(getProjects)
-    .put(changeCompiled)
+    .put(changeCompleted)
     .delete(deleteProjects);
 
 module.exports = router;

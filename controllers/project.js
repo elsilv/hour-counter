@@ -100,17 +100,17 @@ exports.deleteProjects = async (req, res, next) => {
 }
 
 // PUT /api/projects/:id
-exports.changeCompiled = async (req, res, next) => {
+exports.changeCompleted = async (req, res, next) => {
     try {
         const project = await Project.findById(req.params.id);
 
         const filter = { _id: req.params.id };
-        const update = { compiled: !project.compiled };
+        const update = { completed: !project.completed };
         
         await Project.findByIdAndUpdate(filter, update, { new: true })
         .then(updatedProject => {
             updatedProject.save()
-            //console.log(updatedProject.compiled)
+            //console.log(updatedProject.completed)
             return res.status(200).json({
                 success: true,
                 data: updatedProject

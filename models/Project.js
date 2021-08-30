@@ -16,7 +16,7 @@ const projectSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    compiled: {
+    completed: {
         type: Boolean,
         default: false
     },

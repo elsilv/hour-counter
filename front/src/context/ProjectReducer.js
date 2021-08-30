@@ -21,13 +21,13 @@ export default (state, action) => {
                 ...state, 
                 projects: [...state.projects, action.payload]
             }
-        case 'CHANGE_COMPILED':
+        case 'CHANGE_COMPLETED':
             return {
                 ...state, 
                 projects: state.projects.map(project => {
                     return {
                        ...project,
-                       compiled: !project.compiled
+                       completed: !project.completed
                     }
                 })
             }    
