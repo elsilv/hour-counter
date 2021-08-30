@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { GlobalContext } from '../context/ProjectState';
 import ReactTooltip from 'react-tooltip';
@@ -11,11 +11,6 @@ export const ProjectsUsed = (props) => {
 
     const label = props.projects.compiled
     ? <AiIcons.AiOutlineCheckCircle size={20}/> : <AiIcons.AiOutlineBorder size={20}/>
-
-    function change (id) {
-      changeCompiled(id)
-      console.log(`change project: ${id}, status: ${props.projects.compiled}`)
-    }
 
     return (
        <>
@@ -35,7 +30,7 @@ export const ProjectsUsed = (props) => {
                       <button className="project-list-btn" data-tip="Remove project" onClick={() => deleteProject(props.projects._id)}>  <AiIcons.AiOutlineDelete size={20}/></button>
                     </u>
                     <u className="p2">
-                      <button data-tip="State of project" className="project-list-btn" onClick={() => changeCompiled(props.projects._id)}>  {label} </button>
+                      <button data-tip="Mark project as completed" className="project-list-btn" onClick={() => changeCompiled(props.projects._id)}>  {label} </button>
                     </u>
                   </p> 
         </div>       
