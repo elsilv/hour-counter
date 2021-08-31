@@ -124,3 +124,27 @@ exports.changeCompleted = async (req, res, next) => {
         })
     }
 }
+
+// PUT /api/projects/:id
+exports.editProject = async (req, res, next) => {
+    try {
+        const filter = { _id: req.params.id };
+        const update = { name: req.body.name, 
+                         amount: req.body.amount,
+                         description: req.body.description };
+
+        await Project.findByIdAndUpdate(filter, update, { new: true })
+        .then(updatedProject => {
+            return res.status(200).json({
+                success: true,
+                data: updatedProject
+            })
+            
+          })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: 'Server error'
+        })
+    }
+}

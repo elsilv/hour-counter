@@ -80,11 +80,28 @@ export const GlobalProvider2 = ( {children} ) => {
         }
     }
 
+    async function editProject(id) {
+
+        try {
+            await axios.put(`/api/projects/edit/${id}`)
+            dispatch({
+                type: 'EDIT_PROJECT', 
+                payload: id
+            })
+        } catch (error) {
+            dispatch({
+                type: 'PROJECT_ERROR',
+                payload: error.response.data.error
+            })
+        }
+    }
+
     return (<GlobalContext.Provider value={ { projects: state.projects, 
                                               deleteProject, 
                                               addProject, 
                                               getProjects,
                                               changeCompleted,
+                                              editProject,
                                               error: state.error } }>
         {children}
     </GlobalContext.Provider>);

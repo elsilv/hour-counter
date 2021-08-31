@@ -30,7 +30,12 @@ export default (state, action) => {
                        completed: !project.completed
                     }
                 })
-            }    
+            }
+        case 'EDIT_PROJECT':
+            return {
+                ...state, 
+                projects: [...state.projects, action.payload]
+            }            
         default:
             return state;
     }
