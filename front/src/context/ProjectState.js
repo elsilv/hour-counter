@@ -80,13 +80,18 @@ export const GlobalProvider2 = ( {children} ) => {
         }
     }
 
-    async function editProject(id) {
+    async function editProject(id, project) {
+        const config = {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
 
         try {
-            await axios.put(`/api/projects/edit/${id}`)
+            const res = await axios.put(`/api/projects/edit/${id}`, project, config)
             dispatch({
                 type: 'EDIT_PROJECT', 
-                payload: id
+                payload: res.data.data
             })
         } catch (error) {
             dispatch({

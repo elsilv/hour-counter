@@ -35,7 +35,8 @@ export default (state, action) => {
             return {
                 ...state, 
                 projects: [...state.projects, action.payload]
-            }            
+        }
+                  
         default:
             return state;
     }

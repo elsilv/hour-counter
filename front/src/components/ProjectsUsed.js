@@ -11,7 +11,10 @@ export const ProjectsUsed = (props) => {
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [name, setName] = useState('');
-    const amount = props.projects.amount;
+    const [amount, setAmount] = useState(0);
+    const [description, setDescription] = useState('');
+
+    const amountProps = props.projects.amount;
 
     const label = props.projects.completed
     ? <AiIcons.AiOutlineCheckCircle size={20}/> : <AiIcons.AiOutlineBorder size={20}/>
@@ -21,11 +24,13 @@ export const ProjectsUsed = (props) => {
       console.log('edit')
 
       const newProject = {
-        name: name
+        name: name,
+        amount: +amount,
+        description: description
     }
 
       if (name.length > 2) { 
-        editProject(newProject); 
+        editProject(props.projects._id, newProject); 
      }
     }
 
@@ -46,7 +51,7 @@ export const ProjectsUsed = (props) => {
        <ReactTooltip place="bottom" effect="float"/>
         <div className="one-project">
                    <h3>{props.projects.name} </h3> 
-                   <p>Hours planned to use: <span>{amount}</span></p>  
+                   <p>Hours planned to use: <span>{amountProps}</span></p>  
                    <p>{props.projects.description}</p>
                    <p className="icons">  
                     <u className="p2">
@@ -91,10 +96,10 @@ export const ProjectsUsed = (props) => {
                           <input id="project-name" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder={props.projects.name}/>
                           
                           <label htmlFor="amount">How much time do you want to spend?</label>
-                          <input id="project-amount" type="number" placeholder={props.projects.amount}/>
+                          <input id="project-amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={props.projects.amount}/>
 
                           <label htmlFor="description">Descripe your project</label>
-                          <input id="project-description" type="text-field" placeholder={props.projects.description} />
+                          <input id="project-description" type="text-field" value={description} onChange={(e) => setDescription(e.target.value)} placeholder={props.projects.description} />
                           <button> Save </button>
                           </form>
                       </Modal>

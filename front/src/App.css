@@ -102,7 +102,6 @@ p {
 
 .header {
         position: absolute;
-        z-index: 1;
         top: 0%;
         left: 50%;
         margin-top: 100px;

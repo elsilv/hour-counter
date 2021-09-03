@@ -129,9 +129,7 @@ exports.changeCompleted = async (req, res, next) => {
 exports.editProject = async (req, res, next) => {
     try {
         const filter = { _id: req.params.id };
-        const update = { name: req.body.name, 
-                         amount: req.body.amount,
-                         description: req.body.description };
+        const update = req.body;
 
         await Project.findByIdAndUpdate(filter, update, { new: true })
         .then(updatedProject => {
