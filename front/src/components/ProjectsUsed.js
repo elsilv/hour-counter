@@ -21,17 +21,15 @@ export const ProjectsUsed = (props) => {
     
     const onSubmit = e => {
       e.preventDefault();
-      console.log('edit')
 
       const newProject = {
-        name: name,
-        amount: +amount,
-        description: description
+        name: name || props.projects.name,
+        amount: +amount || props.projects.amount,
+        description: description || props.projects.description
     }
 
-      if (name.length > 2) { 
         editProject(props.projects._id, newProject); 
-     }
+        closeModal()
     }
 
       function openModal() {
