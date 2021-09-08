@@ -15,6 +15,12 @@ export const NavbarData = [
         cName: 'nav-text'
     },
     {
+        title: 'Data',
+        path: '/data',
+        icon: <AiIcons.AiFillFund />,
+        cName: 'nav-text'
+    },
+    {
         title: 'Login',
         path: '/login',
         icon: <AiIcons.AiFillRightCircle />,

@@ -17,7 +17,7 @@ export const ProjectsUsed = (props) => {
     const amountProps = props.projects.amount;
 
     const label = props.projects.completed
-    ? <AiIcons.AiOutlineCheckCircle size={20}/> : <AiIcons.AiOutlineBorder size={20}/>
+    ? <AiIcons.AiOutlineCheckSquare size={20}/> : <AiIcons.AiOutlineBorder size={20}/>
     
     const onSubmit = e => {
       e.preventDefault();

@@ -4,7 +4,7 @@ import { saveAs } from 'file-saver';
 import * as AiIcons from 'react-icons/ai';
 import ReactTooltip from 'react-tooltip';
 
-export const PrintPage = ({project, totalAmounts, projectHoursLi}) => { 
+export const PrintPage = ({ project, totalAmounts, projectHoursLi }) => { 
     let response = {
         ProjectName: project.name, 
         projectId: project._id,

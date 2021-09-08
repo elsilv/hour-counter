@@ -161,6 +161,18 @@ p {
   grid-template-columns: 10px 2fr 1fr 1fr;
 }
 
+.data-grid3 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 10px 2fr 10px;
+}
+
+.data-grid4 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 10px 1fr 1fr 10px;
+}
+
 .center {
     text-align: center;
     margin: auto;
