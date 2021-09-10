@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 export const Information = () => {
     const { projects, getProjects } = useContext(GlobalContext)
-    const { usedHours, getWorkingHours } = useContext(GlobalContext2)
+    const { getWorkingHours } = useContext(GlobalContext2)
 
     useEffect(() => {       
           getProjects();
@@ -22,33 +22,36 @@ export const Information = () => {
     const amounts = usersProjects.map(project => project.amount);
     const plannedTotalHours = amounts.reduce((x, total) => (x += total), 0);
 
+    const userWorkingHours = usersProjects.map(project => project.workingHours.length)
+    const numberOfWorkingHours = userWorkingHours.reduce((x, total) => (x += total), 0);
+
     const completedProjects = usersProjects.filter(project => project.completed === true).length
 
     return(
     <div className="container2">
             <h2> Data </h2>
-            <p>Find some information...</p>
+            <p>Here you can find some information about your projects.</p>
             
             <section className="information">
             <ul className="list"> 
             <li>
             <div className="data-grid3">
-                <div> <FlatIcons.FcCalendar/> </div> <div>Time you have planned to use total</div> <div>{plannedTotalHours}</div>
+                <div> <FlatIcons.FcCalendar size={20}/> </div> <div>Time you have planned to use total</div> <div>{plannedTotalHours}</div>
             </div> 
             </li>
             <li>
             <div className="data-grid3">
-                <div> <FlatIcons.FcClock/> </div> <div>Time you have used total</div> <div>{plannedTotalHours}</div>
+                <div> <FlatIcons.FcClock size={20}/> </div> <div>Time you have used total</div> <div>{ plannedTotalHours }</div>
             </div> 
             </li>
             <li>
-            <div className="data-grid4">
-                <div> <FlatIcons.FcApproval/> </div> <div>Käytetyin projekti</div> <div>Projektin nimi</div> <div>220h</div>
+            <div className="data-grid3">
+                <div> <FlatIcons.FcApproval size={20}/> </div> <div>Number of workinghours you have add total</div> <div>{ numberOfWorkingHours }</div>
             </div>
             </li>
             <li>
             <div className="data-grid3">
-                <div> <FlatIcons.FcInspection/> </div> <div>Number of completed projects</div> <div>{ completedProjects }</div>
+                <div> <FlatIcons.FcInspection size={20}/> </div> <div>Number of completed projects</div> <div>{ completedProjects }</div>
             </div>
             </li>
             </ul>
