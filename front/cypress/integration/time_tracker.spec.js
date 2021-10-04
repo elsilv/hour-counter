@@ -1,6 +1,6 @@
 describe('Front page ', function() {
     it('front page can be opened', function() {
-      cy.visit('http://localhost:3000/main')
+      cy.visit('http://localhost:3000')
       cy.contains('Welcome to use Time Tracker')
       cy.contains('Sign Up')
     })
