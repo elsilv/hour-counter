@@ -1,7 +1,5 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const colors = require('colors');
-const morgan = require('morgan');
 const connectMongoDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 const path = require('path');
@@ -53,4 +51,4 @@ if (process.env.NODE_ENV === 'production') {
 
 const PORT =  process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
+app.listen(PORT, console.log(`Server running on port ${PORT}`));

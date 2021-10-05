@@ -25,20 +25,29 @@ describe('Login ', function() {
     })
   })
 
-  // Test fails if types are not changed
-  /*
   describe('Sign up with new account', function() {
     it('creating a new account works correct', function() {
       cy.visit('http://localhost:3000/register')
       cy.contains('Register')
-      cy.get('#name').type('testi22')
-      cy.get('#email').type('testi@tunnus22')
+      cy.get('#name').type(random_account())
+      cy.get('#email').type(random_account()+'@kissa.fi')
       cy.get('#password').type('12345')
       cy.get('#register-btn').click()
       cy.wait(2000)
-      cy.contains('unique')
+      cy.contains('Welcome to')
     })
-  })  */ 
+  })
+
+// create random account
+function random_account() {
+  var account = '';
+  var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+  for (var i = 0; i < 8; i++)
+  account += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+
+  return account;
+}  
 
 describe('Sign up with account that already exists ', function() {
     it('creating a new account fails if email or username is not unique', function() {

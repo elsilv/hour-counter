@@ -18,11 +18,16 @@ You need to just sign up and try to add some new projects. You can try Time Trac
 
 ## Built with
 Time Tracker is created with:
-- [React]
-- [Node.js] 
-- [Express]
+- [React] v. 17.0.2
+- [Node.js] v. 14.17.0
+- [Express] v. 4.17.1
 - [MongoDB]
-- [Cypress]
+- [Cypress] v. 8.2.0
+
+## Setup
+To run this project in development mode:
+> $ npm install
+> $ npm run dev
 
 #
 
