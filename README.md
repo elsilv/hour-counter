@@ -27,6 +27,7 @@ Time Tracker is created with:
 ## Setup
 To run this project in development mode:
 > $ npm install
+> 
 > $ npm run dev
 
 #
