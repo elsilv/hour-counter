@@ -2,9 +2,11 @@
 node_modules
 REST.http
 result.pdf
+/routes/user.js
 
 # dependencies
 /node_modules
+/.vscode
 /.pnp
 .pnp.js
 
@@ -13,6 +15,7 @@ result.pdf
 
 # production
 /build
+/config/default.json
 
 # misc
 .DS_Store
