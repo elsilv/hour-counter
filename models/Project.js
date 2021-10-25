@@ -9,6 +9,9 @@ const projectSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    timeUsedTotal: {
+        type: Number,
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

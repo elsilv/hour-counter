@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 
 export const ProjectList = () => {
-    const { projects, getProjects } = useContext(GlobalContext)
+    const { projects, getProjects } = useContext(GlobalContext);
 
     useEffect(() => {       
       if (!localStorage.getItem("authToken")) {
@@ -19,10 +19,10 @@ export const ProjectList = () => {
         // eslint-disable-next-line
     }, [projects]);
 
-    const history = useHistory()
+    const history = useHistory();
 
-    const authToken = localStorage.getItem("authToken")
-    const userId = jwt.decode(authToken)
+    const authToken = localStorage.getItem("authToken");
+    const userId = jwt.decode(authToken);
     
     if(!userId) {
         return (
@@ -30,7 +30,7 @@ export const ProjectList = () => {
         )
     }
 
-    var usersProjects = projects.filter(project => project.user._id === userId.id)
+    var usersProjects = projects.filter(project => project.user._id === userId.id);
 
     return (
         <>

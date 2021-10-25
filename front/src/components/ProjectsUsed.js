@@ -29,7 +29,7 @@ export const ProjectsUsed = (props) => {
     }
 
         editProject(props.projects._id, newProject); 
-        closeModal()
+        closeModal();
     }
 
       function openModal() {
