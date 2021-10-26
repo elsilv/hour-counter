@@ -19,7 +19,7 @@ exports.login = async (req, res, next) => {
     const { email, password } = req.body;
 
     if (!email || !password) { 
-        return next(new ErrorResponse("Email or Password is missing", 400)) 
+        return next(new ErrorResponse("Invalid User", 400)) 
     }
 
     try {
@@ -32,7 +32,7 @@ exports.login = async (req, res, next) => {
         const isMatch = await user.matchPasswords(password);
 
         if (!isMatch) { 
-            return next(new ErrorResponse("Email or Password is wrong", 401))  
+            return next(new ErrorResponse("Invalid User", 401))  
         }
 
         sendToken(user, 200, res);

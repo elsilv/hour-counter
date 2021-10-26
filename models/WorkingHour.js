@@ -4,11 +4,14 @@ const workingHoursSchema = new mongoose.Schema({
     text: {
         type: String,
         trim: true,
-        required: true
+        required: true,
+        maxLength: 30
     },
     amount: {
         type: Number,
-        required: true
+        required: true,
+        max: 10000,
+        min: 0
     },
     created : {
         type: Date,

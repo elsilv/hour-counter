@@ -3,21 +3,22 @@ const mongoose = require('mongoose');
 const projectSchema = new mongoose.Schema({ 
     name: {
         type: String,
-        required: true
+        required: true,
+        maxLength: 30
     },
     amount: {
         type: Number,
-        required: true
-    },
-    timeUsedTotal: {
-        type: Number,
+        required: true,
+        min: 0,
+        max: 10000
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
     description: {
-        type: String
+        type: String,
+        maxLength: 600
     },
     completed: {
         type: Boolean,

@@ -10,6 +10,7 @@ export const Projects = () => {
   const [description, setDescription] = useState("");
   // eslint-disable-next-line
   const [user, setUser] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     addProject();
@@ -41,6 +42,11 @@ export const Projects = () => {
       setDescription("");
       setUser("60f91c788b820c315c2d2fcf");
     }
+
+    setError("Something is wrong with given values");
+    setTimeout(() => {
+      setError("");
+    }, 5000);
   };
 
   return (
@@ -49,6 +55,7 @@ export const Projects = () => {
         <div className="text">
           <h4>Add a new project</h4>
 
+          {error && <span className="error-message"> {error} </span>}
           {localStorage.getItem("authToken") !== null && (
             <>
               <form onSubmit={onSubmit}>
@@ -59,7 +66,7 @@ export const Projects = () => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter text..."
+                    placeholder="Enter text max. 25..."
                   />
                 </div>
                 <div className="form-control">
@@ -81,7 +88,7 @@ export const Projects = () => {
                     type="text-field"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    placeholder="Enter description..."
+                    placeholder="Enter description max. 600 characters..."
                   />
                 </div>
                 <button id="project-btn" className="btn">

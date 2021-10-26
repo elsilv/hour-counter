@@ -24,7 +24,7 @@ export const ProjectPage = () => {
   );
 
   if (!project) {
-    return <h3>Please wait</h3>;
+    return <h3>Please wait. Something gone wrong.</h3>;
   }
 
   const amounts = projectHours.map((workingHours) => workingHours.amount);

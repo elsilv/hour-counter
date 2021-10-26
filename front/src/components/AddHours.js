@@ -7,6 +7,7 @@ export const AddHours = () => {
   const [amount, setAmount] = useState(0);
   // eslint-disable-next-line
   const [project, setProject] = useState("");
+  const [error, setError] = useState("");
 
   const { addHours } = useContext(GlobalContext2);
 
@@ -15,25 +16,33 @@ export const AddHours = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const newHistory = {
-      id: Math.floor(Math.random() * 100000),
-      text: text,
-      amount: +amount,
-      project: id,
-    };
+    try {
+      const newHistory = {
+        id: Math.floor(Math.random() * 100000),
+        text: text,
+        amount: +amount,
+        project: id,
+      };
 
-    if ((text.length > 1) & (amount !== 0)) {
-      addHours(newHistory);
+      if ((text.length > 1) & (amount !== 0)) {
+        addHours(newHistory);
+
+        setText("");
+        setAmount(0);
+        setProject("");
+      }
+    } catch (error) {
+      setError("Something is wrong with given values");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
     }
-
-    setText("");
-    setAmount(0);
-    setProject("");
   };
 
   return (
     <>
       <h4>Add hours you have used</h4>
+      {error && <span className="error-message"> {error} </span>}
       <form onSubmit={onSubmit}>
         <div className="form-control">
           <label htmlFor="text">What did you do?</label>
