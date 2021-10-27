@@ -1,5 +1,5 @@
 {
-    "_comment": "Heroku-version uses different database, this is just in local use and have limited rights",
+    "_comment": "Heroku-version uses different database, this is just in local use and have limited rights. Heroku also uses different jwtSecret.",
     "mongoURI": "mongodb+srv://dbUser:y6UwGHSbvgdVKAEA@hourcounter.o15id.mongodb.net/timecounter?retryWrites=true&w=majority",
     "jwtSecret": "sitakissaostaisi"
 }

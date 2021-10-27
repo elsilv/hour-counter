@@ -15,7 +15,8 @@ exports.protect = async (req, res, next) => {
     }
 
     try {
-        const decoded = jwt.verify(token, config.get('jwtSecret'))
+        const jwt_secret = process.env.JWT_KEY || config.get('jwtSecret')
+        const decoded = jwt.verify(token, jwt_secret)
         const user = await User.findById(decoded.id)
 
         if (!user) return next(new ErrorResponse("No user found", 404))

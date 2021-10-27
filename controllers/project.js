@@ -38,7 +38,8 @@ exports.addProjects = async (req, res, next) => {
     const { name, amount } = req.body;
 
     const token = getTokenFrom(req);
-    const decodedToken = jwt.verify(token, config.get("jwtSecret"));
+    const jwt_secret = process.env.JWT_KEY || config.get('jwtSecret')
+    const decodedToken = jwt.verify(token, jwt_secret);
 
     if (!token || !decodedToken.id) {
       return response.status(401).json({ error: "token missing or invalid" });

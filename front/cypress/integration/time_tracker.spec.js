@@ -1,3 +1,14 @@
+// create random account
+function random_account() {
+  var account = '';
+  var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+  for (var i = 0; i < 8; i++)
+  account += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+
+  return account;
+}  
+
 describe('Front page ', function() {
     it('front page can be opened', function() {
       cy.visit('http://localhost:3000')
@@ -21,7 +32,7 @@ describe('Login ', function() {
       cy.get('#email').type('kissa@koira')
       cy.get('#password').type('wrong')
       cy.get('#login-button').click()
-      cy.contains('Email or Password is wrong')
+      cy.contains('Invalid User')
     })
   })
 
@@ -36,18 +47,30 @@ describe('Login ', function() {
       cy.wait(2000)
       cy.contains('Welcome to')
     })
+
+    it('creating a new account with too short password', function() {
+      cy.visit('http://localhost:3000/register')
+      cy.contains('Register')
+      cy.get('#name').type(random_account())
+      cy.get('#email').type(random_account()+'@kissa.fi')
+      cy.get('#password').type('12')
+      cy.get('#register-btn').click()
+      cy.wait(2000)
+      cy.contains('shorter than')
+    })
+
+    it('creating a new account with too short username', function() {
+      cy.visit('http://localhost:3000/register')
+      cy.contains('Register')
+      cy.get('#name').type('ab')
+      cy.get('#email').type(random_account()+'@kissa.fi')
+      cy.get('#password').type('12345')
+      cy.get('#register-btn').click()
+      cy.wait(2000)
+      cy.contains('username')
+      cy.contains('shorter than')
+    })
   })
-
-// create random account
-function random_account() {
-  var account = '';
-  var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-
-  for (var i = 0; i < 8; i++)
-  account += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-
-  return account;
-}  
 
 describe('Sign up with account that already exists ', function() {
     it('creating a new account fails if email or username is not unique', function() {

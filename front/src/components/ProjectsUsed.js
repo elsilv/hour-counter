@@ -97,7 +97,7 @@ export const ProjectsUsed = (props) => {
                           <input id="project-amount" type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={props.projects.amount}/>
 
                           <label htmlFor="description">Descripe your project</label>
-                          <input id="project-description" type="text-field" value={description} onChange={(e) => setDescription(e.target.value)} placeholder={props.projects.description} />
+                          <input id="project-description" type="text-field" value={description} onChange={(e) => setDescription(e.target.value)} placeholder={props.projects.description}/>
                           <button> Save </button>
                           </form>
                       </Modal>

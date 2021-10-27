@@ -35,18 +35,18 @@ export const Projects = () => {
       user: "60f91c788b820c315c2d2fcf",
     };
 
-    if (name.length > 4 && amount !== 0) {
+    if (name.length > 0 && name.length < 30 && description < 600) {
       addProject(newProject);
       setName("");
       setAmount(0);
       setDescription("");
       setUser("60f91c788b820c315c2d2fcf");
+    } else {
+      setError("Something is wrong with given values");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
     }
-
-    setError("Something is wrong with given values");
-    setTimeout(() => {
-      setError("");
-    }, 5000);
   };
 
   return (
