@@ -35,7 +35,7 @@ export const Projects = () => {
       user: "60f91c788b820c315c2d2fcf",
     };
 
-    if (name.length > 0 && name.length < 30 && description < 600) {
+    if (name.length >= 2 && name.length < 30 && description.length < 600) {
       addProject(newProject);
       setName("");
       setAmount(0);

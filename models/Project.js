@@ -4,6 +4,7 @@ const projectSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
+        minLength: 2,
         maxLength: 30
     },
     amount: {
