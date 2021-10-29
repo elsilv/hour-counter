@@ -1,21 +1,15 @@
 module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi }) => {
-    const today = new Date()
+  const today = new Date();
 
-   const listText = 
-    projectHoursLi.map((workingHour) => {
-      return ( `<li>
-        ${workingHour.text}
-      </li>`)
-    })
+  const listText = projectHoursLi
+    .map((workingHour) => workingHour.text)
+    .join("<br>");
 
-    const listAmount = 
-    projectHoursLi.map((workingHour) => {
-      return ( `<li>
-      ${workingHour.amount}h
-      </li>`)
-    })
+  const listAmount = projectHoursLi
+    .map((workingHour) => workingHour.amount)
+    .join("<br>");
 
-    return `
+  return `
     <!doctype html>
     <html>
        <head>
@@ -27,10 +21,10 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
              margin: auto;
              padding: 30px;
              border: 1px solid #eee;
-             box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
              font-size: 18px;
              line-height: 24px;
-             font-family: 'Helvetica Neue', 'Helvetica',
+             font-family: 'Helvetica Neue', 'Helvetica';
              color: #555;
              }
              li {
@@ -115,7 +109,7 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
                       <table>
                          <tr>
                             <td>
-                               Date: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
+                               Date: ${`${today.getDate()}.${today.getMonth() + 1}.${today.getFullYear()}`}
                             </td>
                          </tr>
                       </table>
@@ -141,7 +135,7 @@ module.exports = ({ ProjectName, projectId, amount, totalAmounts, projectHoursLi
                       </tr>
                       <tr class="item">
                          <td>${listText}</td>
-                         <td>${listAmount}h</td>
+                         <td>${listAmount}</td>
                       </tr>
 
              <tr class="heading">
