@@ -53,7 +53,7 @@ describe('Login ', function() {
       cy.contains('Register')
       cy.get('#name').type(random_account())
       cy.get('#email').type(random_account()+'@kissa.fi')
-      cy.get('#password').type('12')
+      cy.get('#password').type('13')
       cy.get('#register-btn').click()
       cy.wait(2000)
       cy.contains('shorter than')

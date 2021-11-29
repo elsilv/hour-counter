@@ -1,0 +1,23 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment-pipeline:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - name: npm install
+        run: npm install
+      - name: cypress tests
+        uses: cypress-io/github-action@v2
+        with: 
+          command: npm run test:e2e
+          start: npm run dev
+          wait-on: http://localhost:3000/
