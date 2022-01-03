@@ -4,8 +4,11 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
-jobs:
+jobs: 
   deployment-pipeline:
     runs-on: ubuntu-18.04
     steps:
@@ -15,9 +18,24 @@ jobs:
           node-version: '14'
       - name: npm install
         run: npm install
-      - name: cypress tests
+      - name: npm install
+        working-directory: ./front
+        run: npm install
+      - name: build
+        run: npm run build:front
+      - name: e2e tests
         uses: cypress-io/github-action@v2
-        with: 
+        env:
+          TEST_MONGODB_URI: ${{ secrets.TEST_MONGODB_URI }}
+          SECRET: ${{ secrets.JWT_KEY }}
+        with:
           command: npm run test:e2e
-          start: npm run dev
-          wait-on: http://localhost:3000/
+          start: npm run start-prod
+          wait-on: http://localhost:3001
+      - uses: actions/checkout@v2
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.33.0
+        if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
