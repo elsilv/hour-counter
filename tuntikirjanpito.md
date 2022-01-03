@@ -68,4 +68,5 @@
 |27.10.|  1,5h  | Uusia testejä ja pieniä päivityksiä vanhoihin, pieniä muutoksia aiempiin virheviesteihin, Heroku käyttämään eri jwt keytä
 |28.10.|  0,5h  | Yksittäisten pienten bugien korjailua
 |29.10.|  1,5h  | Näyttämään pdf-tiedostot oikein, aiemmin listauksessa rumia pilkkuja
-| yht   | 122,5h   | | 
+|3.1.|  1h  | Pipeline toimimaan oikein, ongelmia cypressin kanssa
+| yht   | 123,5h   | | 
